@@ -1,0 +1,47 @@
+.profile-header {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(262deg, #ff7854, #fd267d);
+  height: 70px;
+  padding: 0 15px;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__arrow {
+    background: url('../images/arrow-left.svg') no-repeat left center / 25px 25px;
+    width: 0;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.3s;
+
+
+    &_visible {
+      width: 50px;
+      opacity: 1;
+    }
+  }
+
+  &__user-icon {
+    width: 32px;
+    height: 32px;
+    background-image: url('../images/users/user1-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 0px rgba(#000, 0.5);
+    margin-right: 15px;
+  }
+
+  &__title {
+    font-size: 24px;
+    color: #fff;
+  }
+
+}
