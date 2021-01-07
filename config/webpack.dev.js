@@ -1,8 +1,7 @@
-const paths = require('./paths')
-
-const webpack = require('webpack')
-const { merge } = require('webpack-merge')
-const common = require('./webpack.common.js')
+const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+const paths = require('./paths');
+const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   // Set the mode to development or production
@@ -17,11 +16,12 @@ module.exports = merge(common, {
   // Запуск сервера для разработки
   devServer: {
     historyApiFallback: true,
-    contentBase: paths.build,
+    contentBase: paths.src,
     open: 'Chrome',
     compress: true,
     hot: true,
     port: 8080,
+    watchContentBase: true,
   },
 
   plugins: [
@@ -29,4 +29,4 @@ module.exports = merge(common, {
     // Обновлять только при "горячей" перезагрузке
     new webpack.HotModuleReplacementPlugin(),
   ],
-})
+});

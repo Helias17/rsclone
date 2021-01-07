@@ -3,7 +3,8 @@
   align-items: center;
   background: linear-gradient(262deg, #ff7854, #fd267d);
   height: 70px;
-  padding: 0 15px;
+  padding: 0 30px;
+  user-select: none;
 
   &__wrap {
     display: flex;

@@ -1,0 +1,60 @@
+.matches {
+
+  &_hidden {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 15px;
+  }
+
+  &__item {
+    --marg-size: 5px;
+    position: relative;
+    width: calc(33.333% - var(--marg-size)*2);
+    height: 140px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 3px;
+    margin: var(--marg-size);
+    cursor: pointer;
+    transition: 0.3s;
+    transform-origin: center;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &_1 {
+      background-image: url('../images/users/user2-1.jpg');
+    }
+    &_2 {
+      background-image: url('../images/users/user3-1.jpg');
+    }
+    &_3 {
+      background-image: url('../images/users/user4-1.jpg');
+    }
+    &_4 {
+      background-image: url('../images/users/user5-1.jpg');
+    }
+    &_5 {
+      background-image: url('../images/users/user6-1.jpg');
+    }
+  }
+
+  &__item-title {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 0 3px rgba(#000, 0.3);
+  }
+}
