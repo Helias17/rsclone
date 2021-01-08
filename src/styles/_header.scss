@@ -11,9 +11,10 @@ html {
   justify-content: space-between;
   z-index: 1;
 
-  &__button {
+  &__login {
     min-height: 4rem;
     margin-right: 3rem;
+    margin-left: 3rem;
     padding: 0 2.4rem;
     background: #fff;
     color: #fd5068;
@@ -28,6 +29,31 @@ html {
     &:hover {
       background: linear-gradient(262deg, #ff7854, #fd267d);
       color: #fff;
+    }
+  }
+
+  &__language {
+    background-color: transparent;
+    color: #fff;
+    height: 40px;
+    padding: 0 16px;
+    border: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+
+    &:hover {
+      color: #fd5068;
+    }
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-right: 0.3rem;
+      fill: currentColor;
+      opacity: 0.9;
+      vertical-align: middle;
     }
   }
 }
