@@ -1,3 +1,57 @@
 .testimonials {
   height: 80rem;
+  margin-top: 4rem;
+
+  &__list {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    color: #2c2c2c;
+    font-size: 1.6rem;
+  }
+
+  &__item {
+    min-width: calc(33.3333% - 0px);
+    max-width: calc(33.3333% - 0px);
+    padding: 0.8rem;
+  }
+}
+
+.testimonial {
+  min-height: 30rem;
+  height: 100%;
+  padding: 2.4rem;
+  position: relative;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(112,125,134,0.14);
+  border-style: solid;
+  border-color: #e8e8e8;
+  border-width: 0.1rem;
+  border-radius: 0.8rem;
+
+  &__symbol {
+    margin-right: 0.8rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    float: right;
+    color: #e8e8e8;
+    font-size: 16rem;
+    line-height: 1;
+    opacity: 0.8;
+    z-index: -1;
+  }
+
+  &__title {
+    margin-bottom: 0.8rem;
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+
+  hr {
+    width: 80%;
+  }
+
+  p {
+    color: #5c5c5c;
+  }
 }
