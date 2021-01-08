@@ -1,0 +1,39 @@
+.footer {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.navigation {
+  display: flex;
+  border-bottom-width: 1px;
+  border-bottom-color: #e8e8e8;
+  border-style: solid;
+
+  &__block {
+    width: 25%;
+  }
+
+  h2 {
+    margin-bottom: 0.25rem;
+    font-size: 2rem;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  li {
+    line-height: 3.2rem;
+    font-size: 1.6rem;
+
+    a {
+      text-decoration: none;
+      color: #2c2c2c;
+
+      &:hover {
+        color: #fd5068;
+      }
+    }
+  }
+}
+
