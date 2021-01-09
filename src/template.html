@@ -105,112 +105,243 @@
             </ul>
           </div>
         </div>
-        <div class="inner__col1-profile settings">
-          <p class="settings__title">account settings</p>
-          <ul class="settings__list">
-            <li class="settings__item settings__item_hover-arrow">
-              <p class="settings__item-name">Manage payment account</p>
-            </li>
-            <li class="settings__item settings__item_hover-arrow">
-              <p class="settings__item-name">email</p>
-              <p class="settings__item-value">rusmssupport@gmail.com</p>
-            </li>
-          </ul>
-          <p class="settings__title">discovery settings</p>
-          <ul class="settings__list">
-            <li class="settings__item settings__item_hover-arrow">
-              <p class="settings__item-name">Location</p>
-              <p class="settings__item-value">Minsk, Belarus</p>
-            </li>
-            <li class="settings__item settings__item_no-pointer">
-              <p class="settings__item-name">Maximum distance</p>
-              <p class="settings__item-value">50 km</p>
-            </li>
-            <li class="settings__item settings__item_hover-arrow">
-              <p class="settings__item-name">Looking for</p>
-              <p class="settings__item-value">Woman</p>
-            </li>
-            <li class="settings__item settings__item_no-pointer">
-              <p class="settings__item-name">Age range</p>
-              <p class="settings__item-value">18-39</p>
-            </li>
-            <li class="settings__item settings__item_no-pointer">
-              <p class="settings__item-name">Global</p>
-              <p class="settings__item-value"><input type="checkbox"></p>
-            </li>
-            <li class="settings__item settings__item_desc settings__item_no-pointer">
-              <p class="settings__item-desc">
-                Going global will allow you to see people from around the world after you’ve run out of profiles nearby.
+        <div class="inner__col1-profile">
+          <div class="settings" id="settingsProfile">
+            <p class="settings__title">account settings</p>
+            <ul class="settings__list">
+              <li class="settings__item settings__item_hover-arrow  js-has-nested" data-name="cardNumber">
+                <p class="settings__item-name">Manage payment account</p>
+              </li>
+              <li class="settings__item settings__item_hover-arrow js-has-nested" data-name="email">
+                <p class="settings__item-name">email</p>
+                <p class="settings__item-value">rusmssupport@gmail.com</p>
+              </li>
+            </ul>
+            <p class="settings__title">discovery settings</p>
+            <ul class="settings__list">
+              <li class="settings__item settings__item_no-pointer">
+                <p class="settings__item-name">Location</p>
+                <p class="settings__item-value">Minsk, Belarus</p>
+              </li>
+              <li class="settings__item settings__item_no-pointer">
+                <p class="settings__item-name">Maximum distance</p>
+                <p class="settings__item-value">50 km</p>
+              </li>
+              <li class="settings__item settings__item_hover-arrow js-has-nested" data-name="lookingFor">
+                <p class="settings__item-name">Looking for</p>
+                <p class="settings__item-value">Woman</p>
+              </li>
+              <li class="settings__item settings__item_no-pointer">
+                <p class="settings__item-name">Age range</p>
+                <p class="settings__item-value">18-39</p>
+              </li>
+              <li class="settings__item settings__item_no-pointer">
+                <p class="settings__item-name">Global</p>
+                <p class="settings__item-value"><input type="checkbox"></p>
+              </li>
+              <li class="settings__item settings__item_desc settings__item_no-pointer">
+                <p class="settings__item-desc">
+                  Going global will allow you to see people from around the world after you’ve run out of profiles
+                  nearby.
+                </p>
+              </li>
+              <li class="settings__item settings__item_no-pointer">
+                <p class="settings__item-name">Show me on Tinder</p>
+                <p class="settings__item-value"><input type="checkbox" checked></p>
+              </li>
+              <li class="settings__item settings__item_desc settings__item_no-pointer">
+                <p class="settings__item-desc">
+                  While turned off, you will not be shown in the card stack. You can still see and chat with your
+                  matches.
+                </p>
+              </li>
+            </ul>
+            <p class="settings__title">notifications</p>
+            <ul class="settings__list">
+              <li class="settings__item settings__item_hover-arrow js-has-nested" data-name="notifications">
+                <p class="settings__item-name">Email</p>
+              </li>
+            </ul>
+            <p class="settings__title">Language</p>
+            <ul class="settings__list">
+              <li class="settings__item settings__item_hover-arrow js-has-nested" data-name="language">
+                <p class="settings__item-name">Language</p>
+                <p class="settings__item-name" id="langMenuTitle">English</p>
+              </li>
+            </ul>
+            <p class="settings__title">Help and support</p>
+            <ul class="settings__list">
+              <li class="settings__item settings__item_hover-arrow js-has-nested" data-name="feedback">
+                <p class="settings__item-name">Feedback form</p>
+              </li>
+            </ul>
+            <p class="settings__title">Legal</p>
+            <ul class="settings__list">
+              <li class="settings__item settings__item_hover-arrow">
+                <p class="settings__item-name">Cookie policy</p>
+              </li>
+              <li class="settings__item settings__item_hover-arrow">
+                <p class="settings__item-name">Terms of service</p>
+              </li>
+            </ul>
+            <ul class="settings__list settings__list_single">
+              <li class="settings__item settings__item_center">
+                <p class="settings__item-name">Logout</p>
+              </li>
+            </ul>
+            <div class="settings__about-app">
+              <img src="images/tinder-logo.svg" width="30" height="30" alt="" class="settings__logo">
+              Tinder Clone Version 1.0
+            </div>
+            <ul class="settings__list settings__list_single">
+              <li class="settings__item settings__item_center">
+                <p class="settings__item-name">Delete account</p>
+              </li>
+            </ul>
+            <div class="settings__about-app">
+              <a href="https://rs.school/js/" target="_blank"><img src="images/rs-school-logo.svg" width="55"
+                  height="21" class="settings__logo" alt=""></a>
+              © 2021
+              <p class="settings__authors">
+                <a href="https://github.com/choco-cat" target="_blank">Choco-cat</a>
+                <a href="https://github.com/nastyaklezovich" target="_blank">Nastyaklezovich</a>
+                <a href="https://github.com/helias17" target="_blank">Helias17</a>
+                <a href="https://github.com/fr3ud" target="_blank">Fr3ud</a>
               </p>
-            </li>
-            <li class="settings__item settings__item_no-pointer">
-              <p class="settings__item-name">Show me on Tinder</p>
-              <p class="settings__item-value"><input type="checkbox" checked></p>
-            </li>
-            <li class="settings__item settings__item_desc settings__item_no-pointer">
-              <p class="settings__item-desc">
-                While turned off, you will not be shown in the card stack. You can still see and chat with your matches.
-              </p>
-            </li>
-          </ul>
-          <p class="settings__title">activity status</p>
-          <ul class="settings__list">
-            <li class="settings__item settings__item_hover-arrow">
-              <p class="settings__item-name">Recently active status</p>
-            </li>
-          </ul>
-          <p class="settings__title">notifications</p>
-          <ul class="settings__list">
-            <li class="settings__item settings__item_hover-arrow">
-              <p class="settings__item-name">Email</p>
-            </li>
-          </ul>
-          <p class="settings__title">Language</p>
-          <ul class="settings__list">
-            <li class="settings__item settings__item_hover-arrow">
-              <p class="settings__item-name">Language</p>
-              <p class="settings__item-name">English</p>
-            </li>
-          </ul>
-          <p class="settings__title">Help and support</p>
-          <ul class="settings__list">
-            <li class="settings__item settings__item_hover-arrow">
-              <p class="settings__item-name">Feedback form</p>
-            </li>
-          </ul>
-          <p class="settings__title">Legal</p>
-          <ul class="settings__list">
-            <li class="settings__item settings__item_hover-arrow">
-              <p class="settings__item-name">Cookie policy</p>
-            </li>
-            <li class="settings__item settings__item_hover-arrow">
-              <p class="settings__item-name">Terms of service</p>
-            </li>
-          </ul>
-          <ul class="settings__list settings__list_single">
-            <li class="settings__item settings__item_center">
-              <p class="settings__item-name">Logout</p>
-            </li>
-          </ul>
-          <div class="settings__about-app">
-            <img src="images/tinder-logo.svg" width="30" height="30" alt="" class="settings__logo">
-            Tinder Clone Version 1.0
+            </div>
           </div>
-          <ul class="settings__list settings__list_single">
-            <li class="settings__item settings__item_center">
-              <p class="settings__item-name">Delete account</p>
-            </li>
-          </ul>
-          <div class="settings__about-app">
-            <a href="https://rs.school/js/" target="_blank"><img src="images/rs-school-logo.svg" width="55" height="21"
-                class="settings__logo" alt=""></a>
-            © 2021
-            <p class="settings__authors">
-              <a href="https://github.com/choco-cat" target="_blank">Choco-cat</a>
-              <a href="https://github.com/nastyaklezovich" target="_blank">Nastyaklezovich</a>
-              <a href="https://github.com/helias17" target="_blank">Helias17</a>
-              <a href="https://github.com/fr3ud" target="_blank">Fr3ud</a>
-            </p>
+          <div class="settings settings_nested" data-name="email">
+            <p class="settings__title">E-mail status</p>
+            <ul class="settings__list">
+              <li class="settings__item settings__item_no-pointer">
+                <p class="settings__item-name">usermail@yandex.ru</p>
+                <p class="settings__item-email-status settings__item-email-status_unverified">?</p>
+              </li>
+              <li class="settings__item settings__item_desc settings__item_no-pointer">
+                <p class="settings__item-desc settings__item-desc_red">
+                  Email unverified (check your inbox)
+                </p>
+              </li>
+              <li class="settings__item settings__item_no-pointer">
+                <p class="settings__item-name">usermail@yandex.ru</p>
+                <p class="settings__item-email-status settings__item-email-status_verified">✔</p>
+              </li>
+              <li class="settings__item settings__item_desc settings__item_no-pointer">
+                <p class="settings__item-desc settings__item-desc_blue">
+                  Email verified
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="settings settings_nested" data-name="cardNumber">
+            <p class="settings__title">Card number</p>
+            <div class="credit-card">
+              <input type="text" placeholder="Cardholder name" class="credit-card__input">
+              <input type="text" placeholder="Card number" class="credit-card__input">
+              <div class="credit-card__box">
+                <div>
+                  <input type="text" placeholder="MM/YY" class="credit-card__input">
+                </div>
+                <div>
+                  <input type="text" placeholder="CVC" class="credit-card__input credit-card__input_cvc">
+                </div>
+              </div>
+              <button class="credit-card__btn">Save</button>
+            </div>
+          </div>
+          <div class="settings settings_nested" data-name="lookingFor">
+            <p class="settings__title">Looking for</p>
+            <div class="settings__list">
+              <label class="settings__item" for="genderMen">
+                <p class="settings__item-name">Men</p>
+                <p class="settings__item-value">
+                  <input type="radio" name="genderSet" value="men" id="genderMen">
+                </p>
+              </label>
+              <label class="settings__item" for="genderWomen">
+                <p class="settings__item-name">Women</p>
+                <p class="settings__item-value">
+                  <input type="radio" name="genderSet" value="women" id="genderWomen">
+                </p>
+              </label>
+              <label class="settings__item" for="genderEveryone">
+                <p class="settings__item-name">Everyone</p>
+                <p class="settings__item-value">
+                  <input type="radio" name="genderSet" value="everyone" id="genderEveryone">
+                </p>
+              </label>
+              <div class="settings__item settings__item_desc settings__item_no-pointer">
+                <p class="settings__item-desc" id="genderNotice">
+                  You will only see women in the discovery.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="settings settings_nested" data-name="notifications">
+            <p class="settings__title">E-mail notifications</p>
+            <div class="settings__list">
+              <label class="settings__item" for="newMatchesNotifications">
+                <p class="settings__item-name">New matches</p>
+                <p class="settings__item-value">
+                  <input type="checkbox" name="matches" id="newMatchesNotifications">
+                </p>
+              </label>
+              <label class="settings__item" for="newMessagesNotifications">
+                <p class="settings__item-name">Messages</p>
+                <p class="settings__item-value">
+                  <input type="checkbox" value="messages" id="newMessagesNotifications">
+                </p>
+              </label>
+              <label class="settings__item" for="newPromotionsNotifications">
+                <p class="settings__item-name">Promotions</p>
+                <p class="settings__item-value">
+                  <input type="checkbox" value="promotions" id="newPromotionsNotifications">
+                </p>
+              </label>
+              <div class="settings__item settings__item_desc settings__item_no-pointer">
+                <p class="settings__item-desc" id="genderNotice">
+                  Control the emails you want to get — all of them, just the important stuff, or the bare minimum. You
+                  can always unsubscribe from the bottom of any email.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="settings settings_nested" data-name="language">
+            <p class="settings__title">Language</p>
+            <div class="settings__list">
+              <label class="settings__item" for="engLang">
+                <p class="settings__item-name">English</p>
+                <p class="settings__item-value">
+                  <input type="radio" name="langSet" value="English" id="engLang">
+                </p>
+              </label>
+              <label class="settings__item" for="byLang">
+                <p class="settings__item-name">Belarussian</p>
+                <p class="settings__item-value">
+                  <input type="radio" name="langSet" value="Belarussian" id="byLang">
+                </p>
+              </label>
+              <label class="settings__item" for="ruLang">
+                <p class="settings__item-name">Russian</p>
+                <p class="settings__item-value">
+                  <input type="radio" name="langSet" value="Russian" id="ruLang">
+                </p>
+              </label>
+            </div>
+          </div>
+          <div class="settings settings_nested" data-name="feedback">
+            <p class="settings__title">Feedback</p>
+            <form class="feedback">
+              <select name="" id="" class="feedback__select">
+                <option value="" disabled selected>Topic</option>
+                <option value="">Proposal</option>
+                <option value="">Claim</option>
+                <option value="">Question</option>
+              </select>
+              <textarea name="" id="" cols="30" rows="10" placeholder="Your message"
+                class="feedback__textarea"></textarea>
+              <button class="btn btn_center">Send</button>
+            </form>
           </div>
         </div>
       </div>

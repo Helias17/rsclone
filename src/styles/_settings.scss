@@ -1,4 +1,30 @@
 .settings {
+  position: absolute;
+  width: 100%;
+  min-width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #f5f7fa;
+  overflow-y: auto;
+  transition: 0.3s;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &_overflow-hidden {
+    overflow: hidden;
+  }
+
+  &_nested {
+    left: 100%;
+  }
+
+  &_nested-active {
+    left: 0;
+  }
 
   &__title {
     color: #333;
@@ -63,10 +89,30 @@
   &__item-desc {
     color: #5c5c5c;
     font-size: 12px;
+
+    &_red {
+      color: #ff0000;
+    }
+
+    &_blue {
+      color: #2180e8;
+    }
   }
 
   &__item:hover .settings__item-value {
     color: #fd5068;
+  }
+
+  &__item-email-status {
+    font-weight: bold;
+
+    &_unverified {
+      color: red;
+    }
+
+    &_verified {  
+      color: #2180e8;
+    }
   }
 
   &__about-app {

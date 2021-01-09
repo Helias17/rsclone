@@ -41,12 +41,8 @@
     bottom: 0;
     width: 100%;
     background-color: #f5f7fa;
-    overflow-y: auto;
+    overflow: hidden;
     transition: 0.3s;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
 
     &_active {
       left: 0;
