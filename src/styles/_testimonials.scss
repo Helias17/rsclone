@@ -2,7 +2,8 @@
   margin: 3rem 0;
 
   &__list {
-    width: 90%;
+    //width: 90%;
+    min-width: 0;
     margin: 0 auto;
     display: flex;
     color: #2c2c2c;
@@ -10,9 +11,9 @@
   }
 
   &__item {
-    min-width: calc(33.3333% - 0px);
-    max-width: calc(33.3333% - 0px);
-    padding: 0.8rem;
+    //min-width: calc(33.3333% - 0px);
+    //max-width: calc(33.3333% - 0px);
+    //padding: 0.8rem;
   }
 }
 
@@ -54,3 +55,14 @@
     color: #5c5c5c;
   }
 }
+
+.swiper-container {
+  width: 90%;
+  margin: 3rem auto;
+}
+//
+//.swiper-slide {
+//  min-width: calc(33.3333% - 0px);
+//  max-width: calc(33.3333% - 0px);
+//  padding: 0.8rem;
+//}
