@@ -22,6 +22,18 @@ export default class {
     });
   }
 
+  initKeySpacebar() {
+    document.addEventListener('keyup', (e) => {
+      if (e.code === 'Space') {
+        if (this.activePhotoNum < this.photos.length - 1) {
+          this.slidePhoto(this.activePhotoNum + 1);
+        } else {
+          this.slidePhoto(0);
+        }
+      }
+    });
+  }
+
   initNavItems() {
     this.nav.addEventListener('click', (e) => {
       const clickedNav = e.target.closest('.user-slider__nav-item:not(.user-slider__nav-item_active)');
@@ -85,7 +97,7 @@ export default class {
   }
 
   addArrowsListeners() {
-    this.left.addEventListener('click', (e) => {
+    this.left.addEventListener('click', () => {
       if (this.activePhotoNum - 1 >= 0) {
         this.slidePhoto(this.activePhotoNum - 1);
       }
@@ -115,6 +127,7 @@ export default class {
     this.initNavItems();
     this.addArrowsListeners();
     this.updateArrowsDisplay();
+    this.initKeySpacebar();
     this.isInitialized = true;
     return false;
   }

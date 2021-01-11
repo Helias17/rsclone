@@ -19,6 +19,14 @@
     flex-grow: 1;
   }
 
+  &__main-usercard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 15px;
+  }
+
   &__col1-box {
     flex-grow: 1;
     overflow-y: auto;

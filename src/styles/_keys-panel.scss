@@ -1,0 +1,65 @@
+.keys-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  &__btn {
+    background-color: #666;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 3px 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover, &_active {
+      background-color: #aaa;
+    }
+  }
+
+  &__list {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #999;
+    padding-left: 15px;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 5px 10px;
+    background-position: left center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+
+    &_dislike {
+      background-image: url('../images/key-left.svg');
+    }
+
+    &_like {
+      background-image: url('../images/key-right.svg');
+    }
+
+    &_open-profile {
+      background-image: url('../images/key-up.svg');
+    }
+
+    &_close-profile {
+      background-image: url('../images/key-down.svg');
+    }
+
+    &_super {
+      background-image: url('../images/key-enter.svg');
+    }
+
+    &_next {
+      background-image: url('../images/key-space.svg');
+    }
+  }
+}

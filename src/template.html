@@ -345,55 +345,70 @@
         </div>
       </div>
       <div class="inner__col2">
-        <div class="usercard" id="mainUserCard">
-          <div class="usercard__inner">
-            <div class="usercard__slider">
-              <div class="user-slider">
-                <div class="user-slider__nav">
+        <div class="inner__main-usercard">
+          <div class="usercard" id="mainUserCard">
+            <div class="usercard__inner">
+              <div class="usercard__slider">
+                <div class="user-slider">
+                  <div class="user-slider__nav">
+                  </div>
+                  <div class="user-slider__arrows user-slider__arrows_hidden">
+                    <div class="user-slider__arrow-left"></div>
+                    <div class="user-slider__arrow-right"></div>
+                  </div>
+                  <div class="usercard__short-info" id="mainUserCardShortInfo">
+                    <p class="usercard__name">Валя <span class="usercard__age">19</span></p>
+                    <p class="usercard__showfull">i</p>
+                  </div>
+                  <div class="usercard__hide-fullinfo"></div>
+                  <div class="user-slider__photo-box">
+                  </div>
                 </div>
-                <div class="user-slider__arrows user-slider__arrows_hidden">
-                  <div class="user-slider__arrow-left"></div>
-                  <div class="user-slider__arrow-right"></div>
+              </div>
+              <div class="usercard__info" id="mainUserCardInfo">
+                <div class="usercard__info-header">
+                  <p class="usercard__info-name">Валя <span class="usercard__info-age">19</span></p>
+                  <p class="usercard__gender usercard__gender_woman">Woman</p>
+                  <p class="usercard__city">Lives in <span class="usercard__city-name">Minsk</span></p>
+                  <ul class="usercard__hobby-list">
+                    <li class="usercard__hobby-item">Fashion</li>
+                    <li class="usercard__hobby-item">Yoga</li>
+                    <li class="usercard__hobby-item">Dancing</li>
+                    <li class="usercard__hobby-item">Wine</li>
+                    <li class="usercard__hobby-item">Politics</li>
+                  </ul>
                 </div>
-                <div class="usercard__short-info" id="mainUserCardShortInfo">
-                  <p class="usercard__name">Валя <span class="usercard__age">19</span></p>
-                  <p class="usercard__showfull">i</p>
-                </div>
-                <div class="usercard__hide-fullinfo"></div>
-                <div class="user-slider__photo-box">
+                <div class="usercard__info-about">
+                  Меня зовут Валя. Изучаю биологию, пишу диссертацию. Люблю свою работу.
+                  Понимаю и люблю оперу, несколько лет занимаюсь балетом, практикую аштангу, не сижу в соцсетях, а ютубу
+                  предпочту книгу или кино 😎
+                  Нежно люблю Ремарка и Толкина.
+                  Обожаю летать, атмосферу аэропортов.
+                  Люблю Италию в целом и Сицилию в частности. Научу тебя разбираться в джелато 🍦
+                  Всегда за любые активности,открыта новому, не люблю рутину.
+                  Честность, позитив, вера в добро ✌🏻
+                  Не разбiць, не спынiць, не стрымаць!
                 </div>
               </div>
             </div>
-            <div class="usercard__info" id="mainUserCardInfo">
-              <div class="usercard__info-header">
-                <p class="usercard__info-name">Валя <span class="usercard__info-age">19</span></p>
-                <p class="usercard__gender usercard__gender_woman">Woman</p>
-                <p class="usercard__city">Lives in <span class="usercard__city-name">Minsk</span></p>
-                <ul class="usercard__hobby-list">
-                  <li class="usercard__hobby-item">Fashion</li>
-                  <li class="usercard__hobby-item">Yoga</li>
-                  <li class="usercard__hobby-item">Dancing</li>
-                  <li class="usercard__hobby-item">Wine</li>
-                  <li class="usercard__hobby-item">Politics</li>
-                </ul>
-              </div>
-              <div class="usercard__info-about">
-                Меня зовут Валя. Изучаю биологию, пишу диссертацию. Люблю свою работу.
-                Понимаю и люблю оперу, несколько лет занимаюсь балетом, практикую аштангу, не сижу в соцсетях, а ютубу
-                предпочту книгу или кино 😎
-                Нежно люблю Ремарка и Толкина.
-                Обожаю летать, атмосферу аэропортов.
-                Люблю Италию в целом и Сицилию в частности. Научу тебя разбираться в джелато 🍦
-                Всегда за любые активности,открыта новому, не люблю рутину.
-                Честность, позитив, вера в добро ✌🏻
-                Не разбiць, не спынiць, не стрымаць!
-              </div>
+            <div class="usercard__buttons">
+              <div class="usercard__button usercard__button_dislike"></div>
+              <div class="usercard__button usercard__button_superlike"></div>
+              <div class="usercard__button usercard__button_like"></div>
             </div>
           </div>
-          <div class="usercard__buttons">
-            <div class="usercard__button usercard__button_dislike"></div>
-            <div class="usercard__button usercard__button_superlike"></div>
-            <div class="usercard__button usercard__button_like"></div>
+          <div class="keys-panel">
+            <div class="keys-panel__btn-box">
+              <p class="keys-panel__btn" data-text="show">hide</p>
+            </div>
+            <ul class="keys-panel__list">
+              <li class="keys-panel__item keys-panel__item_dislike">dislike</li>
+              <li class="keys-panel__item keys-panel__item_like">like</li>
+              <li class="keys-panel__item keys-panel__item_open-profile">open profile</li>
+              <li class="keys-panel__item keys-panel__item_close-profile">close profile</li>
+              <li class="keys-panel__item keys-panel__item_super">super like</li>
+              <li class="keys-panel__item keys-panel__item_next">next photo</li>
+            </ul>
           </div>
         </div>
       </div>

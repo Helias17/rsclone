@@ -8,6 +8,7 @@ import initShowSettingsGenderNotice from './js/modules/initShowSettingsGenderNot
 import updateLangSet from './js/modules/updateLangSet';
 import UserSlider from './js/modules/UserSlider';
 import initShowHideUserCardInfo from './js/modules/initShowHideUserCardInfo';
+import initShowHideKeyPanel from './js/modules/initShowHideKeyPanel';
 
 initToggleProfileSettings();
 initMatchesMessagesTabs();
@@ -16,6 +17,7 @@ initShowSettingsNested();
 initShowSettingsGenderNotice();
 updateLangSet();
 initShowHideUserCardInfo();
+initShowHideKeyPanel();
 
 const photos = [
   'http://rustartup.com/tinder/images/users/user4-1.jpg',
