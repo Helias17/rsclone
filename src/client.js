@@ -1,4 +1,4 @@
-import { addUser, login, logout } from './services/users';
+import { addUser, login, logout, updateUser, deleteUser } from './services/users';
 
 // TODO вынести в хелпер
 const md5 = require('md5');
@@ -16,7 +16,7 @@ const prepareData = (form) => {
 
 // TODO вынести в хелпер
 // Если не null, то возвращает все данные по пользователю, обратно - пользователь не авторизован
-const getAuthorizedUser = () => JSON.parse(sessionStorage.getItem('clone-tinder-user'));
+const getAuthorizedUser = () => JSON.parse(localStorage.getItem('clone-tinder-user'));
 
 const registerForm = document.querySelector('#register-form');
 
@@ -56,9 +56,36 @@ loginForm.onsubmit = async (event) => {
   displayAuthorizedUser();
 };
 
+const accountForm = document.querySelector('#account-form');
+
+accountForm.onsubmit = async (event) => {
+  const currentUser = getAuthorizedUser();
+  if (currentUser && currentUser.email) {
+    event.preventDefault();
+    const data = prepareData(accountForm);
+    const upUser = await updateUser(data, currentUser.id);
+    if (upUser.id) {
+      console.log('login', upUser);
+    } else {
+      console.log('login wrong');
+    }
+    displayAuthorizedUser();
+  }
+};
+
 document.getElementById('logout').onclick = () => {
   logout();
   displayAuthorizedUser();
+};
+
+document.getElementById('delete-user').onclick = () => {
+  const currentUser = getAuthorizedUser();
+  if (currentUser && currentUser.id) {
+    deleteUser(currentUser.id);
+    displayAuthorizedUser();
+  } else {
+    console.log('Error deletion profile!!!');
+  }
 };
 
 displayAuthorizedUser();
