@@ -10,6 +10,27 @@
 
 <body>
   <div class="app">
+    <header class="mobile-header">
+      <nav class="mobile-header__menu">
+        <ul class="mobile-header__list">
+          <li class="mobile-header__item" id="userCardMenuItem">
+            <svg class="mobile-header__item-icon mobile-header__item-icon_active" id="userCardMenuIcon">
+              <use xlink:href="#icon-tinder"></use>
+            </svg>
+          </li>
+          <li class="mobile-header__item" id="dialogMenuItem">
+            <svg class="mobile-header__item-icon" id="dialogMenuIcon">
+              <use xlink:href="#icon-dialog"></use>
+            </svg>
+          </li>
+          <li class="mobile-header__item" id="profileMenuItem">
+            <svg class="mobile-header__item-icon" id="profileMenuIcon">
+              <use xlink:href="#icon-user"></use>
+            </svg>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <div class="inner">
       <div class="inner__col1">
         <div class="profile-header">
@@ -411,8 +432,167 @@
             </ul>
           </div>
         </div>
+        <div class="inner__profile-usercard">
+          <div class="usercard usercard_h100" id="profileUserCard">
+            <div class="usercard__inner">
+              <div class="usercard__slider usercard__slider_h70">
+                <div class="user-slider">
+                  <div class="user-slider__nav">
+                  </div>
+                  <div class="user-slider__arrows user-slider__arrows_hidden">
+                    <div class="user-slider__arrow-left"></div>
+                    <div class="user-slider__arrow-right"></div>
+                  </div>
+                  <div class="user-slider__photo-box">
+                  </div>
+                </div>
+              </div>
+              <div class="usercard__info usercard__info_visible">
+                <div class="usercard__info-header">
+                  <p class="usercard__info-name">Dwayne <span class="usercard__info-age">35</span></p>
+                  <p class="usercard__gender usercard__gender_man">Man</p>
+                  <p class="usercard__city">Lives in <span class="usercard__city-name">Minsk</span></p>
+                  <ul class="usercard__hobby-list">
+                    <li class="usercard__hobby-item">Fashion</li>
+                    <li class="usercard__hobby-item">Yoga</li>
+                    <li class="usercard__hobby-item">Dancing</li>
+                    <li class="usercard__hobby-item">Wine</li>
+                    <li class="usercard__hobby-item">Politics</li>
+                  </ul>
+                </div>
+                <div class="usercard__info-about">
+                  From being called a “big complicated asshole” at 15yrs old 🙋🏽‍♂️ (due to fighting that led to
+                  suspension) to now being called “the most likable person in the world”...
+                </div>
+              </div>
+            </div>
+            <div class="usercard__button-box">
+              <button class="btn">edit</button>
+              <button class="btn btn_settings">settings</button>
+            </div>
+          </div>
+        </div>
+        <div class="inner__messenger">
+          <div class="messenger">
+            <div class="messenger__header">
+              <div class="messenger__header-back"></div>
+              <div class="messenger__user-icon-box">
+                <div class="messenger__user-icon"></div>
+              </div>
+              <p class="messenger__header-title">
+                EmilyRatajkovski<span class="messenger__years">27 years</span>
+              </p>
+              <div class="messenger__header-unmatch-box">
+                <p class="messenger__header-unmatch">unmatch</p>
+              </div>
+              <div class="messenger__close"></div>
+            </div>
+            <div class="messenger__body messenger__body_promo">
+              <div class="messenger__post-list">
+                <div class="messenger__post messenger__post_incoming">
+                  <div>
+                    <div class="messenger__user-icon messenger__user-icon_post"></div>
+                  </div>
+                  <div>
+                    <p class="messenger__text">
+                      Как твои дела, Привет?
+                    </p>
+                  </div>
+                </div>
+                <div class="messenger__post">
+                  <div>
+                    <p class="messenger__text">
+                      Предпочитаю для начала созвониться, прежде чем встречаться
+                    </p>
+                  </div>
+                </div>
+                <div class="messenger__promo">
+                  <div class="messenger__promo-avatar"></div>
+                  <p class="messenger__promo-title">
+                    Write your first message to <span class="messenger__promo-name">Diana</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="messenger__footer">
+              <input type="text" placeholder="Type a message" class="messenger__input">
+              <div class="messenger__btn-box">
+                <button class="btn btn_messenger">send</button>
+              </div>
+            </div>
+          </div>
+          <div class="inner__match-usercard">
+            <div class="usercard usercard_h100" id="matchUserCard">
+              <div class="usercard__inner">
+                <div class="usercard__slider usercard__slider_h70">
+                  <div class="user-slider">
+                    <div class="user-slider__nav">
+                    </div>
+                    <div class="user-slider__arrows user-slider__arrows_hidden">
+                      <div class="user-slider__arrow-left"></div>
+                      <div class="user-slider__arrow-right"></div>
+                    </div>
+                    <div class="usercard__hide-fullinfo usercard__hide-fullinfo_visible-mobile"></div>
+                    <div class="user-slider__photo-box">
+                    </div>
+                  </div>
+                </div>
+                <div class="usercard__info usercard__info_visible">
+                  <div class="usercard__info-header">
+                    <p class="usercard__info-name">Emily <span class="usercard__info-age">27</span></p>
+                    <p class="usercard__gender usercard__gender_woman">Woman</p>
+                    <p class="usercard__city">Lives in <span class="usercard__city-name">Minsk</span></p>
+                    <ul class="usercard__hobby-list">
+                      <li class="usercard__hobby-item">Fashion</li>
+                      <li class="usercard__hobby-item">Yoga</li>
+                      <li class="usercard__hobby-item">Dancing</li>
+                      <li class="usercard__hobby-item">Wine</li>
+                      <li class="usercard__hobby-item">Politics</li>
+                    </ul>
+                  </div>
+                  <div class="usercard__info-about">
+                    Меня зовут Валя. Изучаю биологию, пишу диссертацию. Люблю свою работу.
+                    Понимаю и люблю оперу, несколько лет занимаюсь балетом, практикую аштангу, не сижу в соцсетях, а
+                    ютубу
+                    предпочту книгу или кино 😎
+                    Нежно люблю Ремарка и Толкина.
+                    Обожаю летать, атмосферу аэропортов.
+                    Люблю Италию в целом и Сицилию в частности. Научу тебя разбираться в джелато 🍦
+                    Всегда за любые активности,открыта новому, не люблю рутину.
+                    Честность, позитив, вера в добро ✌🏻
+                    Не разбiць, не спынiць, не стрымаць!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="inner__btn-box">
+              <button class="inner__btn inner__btn_unmatch">unmatch</button>
+              <button class="inner__btn inner__btn_report">report</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <svg width="0" height="0" class="hidden">
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" id="icon-dialog">
+        <path
+          d="M1792 896q0 174-120 321.5t-326 233-450 85.5q-70 0-145-8-198 175-460 242-49 14-114 22-17 2-30.5-9t-17.5-29v-1q-3-4-.5-12t2-10 4.5-9.5l6-9 7-8.5 8-9q7-8 31-34.5t34.5-38 31-39.5 32.5-51 27-59 26-76q-157-89-247.5-220T0 896q0-130 71-248.5T262 443t286-136.5T896 256q244 0 450 85.5t326 233T1792 896z">
+        </path>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="icon-tinder">
+        <path
+          d="M112.458 444.94c-52.552-53.411-46.316-141.005 16.824-237.006 11.479-17.46 23.381-33.313 37.072-49.489l11.392-13.432 1.13 11.991c1.729 18.782 4.265 29.072 10.023 40.823 3.609 7.387 9.543 15.314 12.145 17.615 1.965 1.768 1.041 2.784 11-2.301 65.59-35.893 72.357-94.473 68.66-144.839-1.285-14.771-4.533-31.248-8.563-43.36-1.545-4.669-2.445-8.343-1.967-8.192.479.149 8.648 7.893 18.164 17.226 90.967 89.029 140.18 182.246 146.561 277.646 1.996 109.336-60.156 167.619-150.615 180.004-77.19 11.934-130.52-6.073-171.826-46.686zm0 0">
+        </path>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="icon-user">
+        <g>
+          <ellipse cx="12" cy="8" rx="5" ry="6"></ellipse>
+          <path
+            d="M21.8 19.1c-.9-1.8-2.6-3.3-4.8-4.2-.6-.2-1.3-.2-1.8.1-1 .6-2 .9-3.2.9s-2.2-.3-3.2-.9c-.5-.2-1.2-.3-1.8 0-2.2.9-3.9 2.4-4.8 4.2-.7 1.3.4 2.8 1.9 2.8h15.8c1.5 0 2.6-1.5 1.9-2.9z">
+          </path>
+        </g>
+      </symbol>
+    </svg>
   </div>
 </body>
 

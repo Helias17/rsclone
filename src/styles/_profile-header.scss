@@ -6,6 +6,10 @@
   padding: 0 30px;
   user-select: none;
 
+  @media (max-width: $screen-tablet) {
+    display: none;
+  }
+
   &__wrap {
     display: flex;
     align-items: center;

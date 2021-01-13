@@ -5,8 +5,16 @@
   height: 80%;
   margin: 0 auto;
   overflow: hidden;
+  border-radius: 10px 10px 0 0;
 
+  @media (max-width: $screen-tablet) {
+    width: 100%;
+    min-width: auto;
+  } 
 
+  &_h100 {
+    height: 100%;
+  }
 
   &__inner {
     position: absolute;
@@ -24,6 +32,10 @@
   &__slider {
     width: 100%;
     height: calc(100% - 90px);
+
+    &_h70 {
+      height: 70%;
+    }
   }
 
   &__info {
@@ -203,5 +215,23 @@
     &_visible {
       display: block;
     }
+
+    &_visible-mobile {
+
+      @media (max-width: $screen-tablet) {
+        display: block;
+      }
+    }
+  }
+
+  &__button-box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding-bottom: 15px;
   }
 }
