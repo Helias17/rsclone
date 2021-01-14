@@ -21,7 +21,7 @@
         </svg>
       </div>
       <div class="header__buttons">
-        <button class="header__language" title="Язык" aria-label="русский" lang="ru"  data-micromodal-trigger="modal-2">
+        <button class="header__language" title="Язык" aria-label="русский" lang="ru"  data-micromodal-trigger="modal-3">
           <svg viewBox="0 0 24 24" width="24px" height="24px" focusable="false" aria-hidden="true" role="presentation">
             <path fill="" d="M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z">
             </path>
@@ -36,7 +36,7 @@
         <div class="overlay"></div>
         <div class="content">
           <h1 class="content__title">Свайп вправо</h1>
-          <button class="content__button" type="button">СОЗДАТЬ АККАУНТ</button>
+          <button class="content__button" type="button" data-micromodal-trigger="modal-2">СОЗДАТЬ АККАУНТ</button>
         </div>
     </main>
   </div>
@@ -202,7 +202,7 @@
         </div>
         <span class="settings__divider">|</span>
         <div class="settings__language">
-          <button class="settings__language-button" title="Язык" aria-label="русский" lang="ru" data-micromodal-trigger="modal-2">Русский</button>
+          <button class="settings__language-button" title="Язык" aria-label="русский" lang="ru" data-micromodal-trigger="modal-3">Русский</button>
         </div>
       </div>
       <span class="copyright">© 2021 RSSchool. Все права защищены.</span>
@@ -237,7 +237,7 @@
           </div>
         </div>
         <footer class="modal__footer">
-          <input type="submit" class="modal__btn modal__btn-primary" value="Login">
+          <input type="submit" class="modal__btn modal__btn-primary" value="Продолжить">
         </footer>
       </form>
       </div>
@@ -261,9 +261,51 @@
             </svg>
           </button>
         </header>
+        <h3 class="modal__title">Введите ваши данные</h3>
+        <form action="/">
+          <div class="modal__content" id="modal-2-content">
+            <div class="measure">
+              <label for="email" class="email__label"></label>
+              <input id="email" class="email__input" type="email" maxlength="20" placeholder="Email">
+              <label for="password" class="password__label"></label>
+              <input id="password" class="password__input" type="password" maxlength="30" placeholder="Password">
+              <input id="name" class="name__input" type="text" maxlength="40" placeholder="Name">
+              <input id="birth" class="birth__input" type="text" maxlength="8" placeholder="Birth">
+              <select name="gender_id" class="gender">
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Transgender</option>
+              </select>
+            </div>
+          </div>
+          <footer class="modal__footer">
+            <input type="submit" class="modal__btn modal__btn-primary" value="Продолжить">
+          </footer>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal micromodal-slide" id="modal-3" aria-hidden="false">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-3-title">
+        <header class="modal__header">
+          <h3 id="modal-3-title"></h3>
+          <svg class="logo__svg" viewBox="0 0 24 24" width="24px" height="24px" focusable="false" role="presentation">
+            <path d="M8.21 10.08c-.02 0-.04 0-.06-.02-.67-.9-.84-2.44-.89-3.03 0-.11-.13-.18-.23-.12C4.93 8.08 3 10.86 3 13.54 3 18.14 6.2 22 11.7 22c5.15 0 8.7-3.98 8.7-8.46 0-5.87-4.2-9.77-7.93-11.53a.13.13 0 0 0-.19.14c.48 3.16-.18 6.6-4.07 7.93z" fill="#fd5068" fill-rule="nonzero">
+
+            </path>
+          </svg>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+            <svg viewBox="0 0 24 24" width="24px" height="24px" focusable="false" aria-hidden="true" role="presentation" data-micromodal-close>
+              <path d="M14.926 12.56v-1.14l5.282 5.288c1.056.977 1.056 2.441 0 3.499-.813 1.057-2.438 1.057-3.413 0L11.512 15h1.138l-5.363 5.125c-.975 1.058-2.438 1.058-3.495 0-1.056-.813-1.056-2.44 0-3.417l5.201-5.288v1.14L3.873 7.27c-1.137-.976-1.137-2.44 0-3.417a1.973 1.973 0 0 1 3.251 0l5.282 5.207H11.27l5.444-5.207c.975-1.139 2.438-1.139 3.413 0 1.057.814 1.057 2.44 0 3.417l-5.2 5.288z">
+              </path>
+            </svg>
+          </button>
+        </header>
         <h3 class="modal__title languages__title">Русский</h3>
         <hr>
-        <div class="modal__content" id="modal-2-content">
+        <div class="modal__content" id="modal-3-content">
           <ul class="languages">
             <li class="languages__item">
               <button class="languages__button" aria-label="английский" aria-selected="false" lang="en">
