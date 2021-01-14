@@ -30,6 +30,7 @@
           </li>
         </ul>
       </nav>
+      <div class="settings-close-mobile"></div>
     </header>
     <div class="inner">
       <div class="inner__col1">
@@ -433,7 +434,7 @@
           </div>
         </div>
         <div class="inner__profile-usercard">
-          <div class="usercard usercard_h100" id="profileUserCard">
+          <div class="usercard usercard_h100 usercard_profile-card" id="profileUserCard">
             <div class="usercard__inner">
               <div class="usercard__slider usercard__slider_h70">
                 <div class="user-slider">
@@ -467,8 +468,83 @@
               </div>
             </div>
             <div class="usercard__button-box">
-              <button class="btn">edit</button>
-              <button class="btn btn_settings">settings</button>
+              <button class="btn" id="btnEditProfile">edit</button>
+              <button class="btn btn_settings" id="btnUserSettings">settings</button>
+              <button class="btn btn_hidden" id="btnSaveEditProfile">save</button>
+              <button class="btn btn_hidden" id="btnCancelEditProfile">cancel</button>
+            </div>
+            <div class="editcard">
+              <div class="editcard__gallery">
+                <div class="editcard__gallery-item"
+                  style="background-image: url('https://rustartup.com/tinder/images/users/user1-1.jpg');">
+                </div>
+                <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+                <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+                <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+                <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+                <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+                <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+                <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+                <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+              </div>
+              <div class="editcard__title">
+                <span class="editcard__title-text">About</span> <span class="editcard__title-name">Dwayne</span>
+              </div>
+              <div class="editcard__item">
+                <textarea name="" class="editcard__about-textarea"></textarea>
+              </div>
+              <div class="editcard__title" id="passionsTitle">
+                passions
+              </div>
+              <div class="editcard__item" id="editcardPassions">
+                <p class="editcard__passion">Reading</p>
+                <p class="editcard__passion editcard__passion_active">Travel</p>
+                <p class="editcard__passion">Dancing</p>
+                <p class="editcard__passion">Surfing</p>
+                <p class="editcard__passion editcard__passion_active">Coffee</p>
+                <p class="editcard__passion">Photography</p>
+                <p class="editcard__passion">Astrology</p>
+                <p class="editcard__passion">Movies</p>
+                <p class="editcard__passion editcard__passion_active">Workout</p>
+                <p class="editcard__passion">Instagram</p>
+              </div>
+              <div class="editcard__title" id="editcardCityTitle">
+                city
+              </div>
+              <div class="editcard__item">
+                <input type="text" class="editcard__input">
+                <label for="editcardCityDetect" class="editcard__city-detect">
+                  <input type="checkbox" checked class="editcard__checkbox" id="editcardCityDetect">
+                  Auto detect my city
+                </label>
+              </div>
+              <div class="editcard__title" id="editcardGenderTitle">
+                Gender
+              </div>
+              <div class="editcard__item editcard__item_flex editcard__item_border-bottom">
+                <label class="editcard__item-name" for="editcardGenderMan">
+                  Man
+                </label>
+                <p class="editcard__item-value">
+                  <input type="radio" name="editcardGender" id="editcardGenderMan">
+                </p>
+              </div>
+              <div class="editcard__item editcard__item_flex editcard__item_border-bottom">
+                <label class="editcard__item-name" for="editcardGenderWoman">
+                  Woman
+                </label>
+                <p class="editcard__item-value">
+                  <input type="radio" name="editcardGender" id="editcardGenderWoman">
+                </p>
+              </div>
+              <div class="editcard__item editcard__item_flex">
+                <label class="editcard__item-name" for="editcardGenderTrans">
+                  Trans
+                </label>
+                <p class="editcard__item-value">
+                  <input type="radio" name="editcardGender" id="editcardGenderTrans">
+                </p>
+              </div>
             </div>
           </div>
         </div>

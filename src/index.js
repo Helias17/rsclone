@@ -12,6 +12,8 @@ import initShowHideKeyPanel from './js/modules/initShowHideKeyPanel';
 import initShowHideMessenger from './js/modules/initShowHideMessenger';
 import initMobileHeaderMenu from './js/modules/initMobileHeaderMenu';
 import initShowHideMatchUsercardMobile from './js/modules/initShowHideMatchUsercardMobile';
+import initShowHideProfileEditor from './js/modules/initShowHideProfileEditor';
+import initShowHideSettingsMobile from './js/modules/initShowHideSettingsMobile';
 
 initToggleProfileSettings();
 initMatchesMessagesTabs();
@@ -24,6 +26,8 @@ initShowHideKeyPanel();
 initShowHideMessenger();
 initMobileHeaderMenu();
 initShowHideMatchUsercardMobile();
+initShowHideProfileEditor();
+initShowHideSettingsMobile();
 
 const photos = [
   'http://rustartup.com/tinder/images/users/user4-1.jpg',
