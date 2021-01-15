@@ -1,0 +1,14 @@
+.settings-close-mobile {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff url('../images/arrow-left-messenger.svg') no-repeat 15px center / 30px 30px;
+  cursor: pointer;
+
+  &_visible {
+    display: block;
+  }
+}
