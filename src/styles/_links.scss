@@ -3,11 +3,21 @@
   padding: 1.6rem 0;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $screen-tablet) {
+    height: 100%;
+    flex-wrap: wrap;
+  }
 }
 
 .download {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+
+  @media (max-width: $screen-tablet) {
+    flex-basis: 100%;
+  }
 
   &__title {
     margin-right: 1.6rem;
@@ -16,6 +26,10 @@
     font-weight: 800;
     white-space: nowrap;
     text-transform: uppercase;
+
+    @media (max-width: $screen-tablet) {
+      font-size: 1.8rem;
+    }
   }
 
   &__links {
@@ -45,6 +59,11 @@
   flex-direction: column;
   justify-content: space-between;
 
+  @media (max-width: $screen-tablet) {
+    margin-top: 12px;
+    flex-basis: 100%;
+  }
+
   &__title {
     margin-right: 1.6rem;
     font-size: 2rem;
@@ -52,6 +71,10 @@
     font-weight: 800;
     white-space: nowrap;
     text-transform: uppercase;
+
+    @media (max-width: $screen-tablet) {
+      font-size: 1.8rem;
+    }
   }
 
   &__list {

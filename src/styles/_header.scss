@@ -11,6 +11,16 @@ html {
   justify-content: space-between;
   z-index: 1;
 
+  @media (max-width: $screen-tablet) {
+    height: 7rem;
+  }
+
+  &__logo {
+    @media (max-width: $screen-tablet) {
+      width: 10rem;
+    }
+  }
+
   &__login {
     min-height: 4rem;
     margin-right: 3rem;
@@ -29,6 +39,10 @@ html {
     &:hover {
       background: linear-gradient(262deg, #ff7854, #fd267d);
       color: #fff;
+    }
+
+    @media (max-width: $screen-tablet) {
+      display: none;
     }
   }
 
@@ -54,6 +68,11 @@ html {
       fill: currentColor;
       opacity: 0.9;
       vertical-align: middle;
+    }
+
+    @media (max-width: $screen-tablet) {
+      margin-top: -12px;
+      text-transform: none;
     }
   }
 }
