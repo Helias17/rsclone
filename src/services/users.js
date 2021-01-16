@@ -43,6 +43,23 @@ export const deleteUser = async (id) => {
     headers: { 'Content-Type': 'application/json' },
   });
   const resp = await response.json();
-  console.log(resp.message);
   localStorage.setItem('clone-tinder-user', null);
+  return resp;
+};
+
+export const addLike = async (data) => {
+  const response = await fetch(`${BASE_URL}/users/like`, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  return response.json();
+};
+
+export const getPairs = async (id) => {
+  const response = await fetch(`${BASE_URL}/pairs/${id}`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  return response.json();
 };
