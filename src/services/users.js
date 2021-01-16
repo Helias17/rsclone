@@ -1,5 +1,4 @@
-// const BASE_URL = 'https://rsclone-tinder.glitch.me';
-const BASE_URL = 'http://localhost:28071';
+const BASE_URL = 'https://rsclone-tinder.glitch.me';
 
 export const addUser = async (data) => {
   const response = await fetch(`${BASE_URL}/users`, {
@@ -52,6 +51,14 @@ export const addLike = async (data) => {
   const response = await fetch(`${BASE_URL}/users/like`, {
     method: 'POST',
     body: JSON.stringify(data),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  return response.json();
+};
+
+export const getPairs = async (id) => {
+  const response = await fetch(`${BASE_URL}/pairs/${id}`, {
+    method: 'GET',
     headers: { 'Content-Type': 'application/json' },
   });
   return response.json();
