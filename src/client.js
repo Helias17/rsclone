@@ -1,4 +1,4 @@
-import { addUser, login, logout, updateUser, deleteUser } from './services/users';
+import { addUser, login, logout, updateUser, deleteUser, addLike } from './services/users';
 
 // TODO вынести в хелпер
 const md5 = require('md5');
@@ -86,6 +86,21 @@ document.getElementById('delete-user').onclick = () => {
   } else {
     console.log('Error deletion profile!!!');
   }
+};
+
+const likeForm = document.querySelector('#like-form');
+
+likeForm.onsubmit = async (event) => {
+  // const currentUser = getAuthorizedUser();
+  // if (currentUser && currentUser.email) {
+  event.preventDefault();
+  const data = prepareData(likeForm);
+  console.log('newLike');
+  const newLike = await addLike(data);
+  if (newLike.message === 'success') {
+   // console.log('newLike', newLike);
+  }
+  // }
 };
 
 displayAuthorizedUser();
