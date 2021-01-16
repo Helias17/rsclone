@@ -1,0 +1,84 @@
+html {
+  font-family: sans-serif;
+  font-size: 10px;
+}
+
+.header {
+  height: 8.8rem;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+
+  @media (max-width: $screen-tablet) {
+    height: 7rem;
+  }
+
+  &__logo {
+    @media (max-width: $screen-tablet) {
+      width: 10rem;
+    }
+  }
+
+  &__login {
+    min-height: 4rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
+    padding: 0 2.4rem;
+    background: #fff;
+    color: #fd5068;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    border-style: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: linear-gradient(262deg, #ff7854, #fd267d);
+      color: #fff;
+    }
+
+    @media (max-width: $screen-tablet) {
+      display: none;
+    }
+  }
+
+  &__language {
+    background-color: transparent;
+    color: #fff;
+    height: 40px;
+    padding: 0 16px;
+    border: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+
+    &:hover {
+      color: #fd5068;
+    }
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-right: 0.3rem;
+      fill: currentColor;
+      opacity: 0.9;
+      vertical-align: middle;
+    }
+
+    @media (max-width: $screen-tablet) {
+      margin-top: -12px;
+      text-transform: none;
+    }
+  }
+}
+
+.logo-wrapper {
+  width: 15rem;
+  height: 4rem;
+  margin-left: 3rem;
+}

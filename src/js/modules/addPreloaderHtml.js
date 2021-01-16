@@ -1,8 +1,9 @@
 import preloaderHtml from '../html/preloader.html'; // pink screen with tinder logo
-import testForms from '../html/testForms.html'; // remove this line, it's just for test
 import initLoginRegForms from './initLoginRegForms';
 import checkAuth from './checkAuth';
 import addInnerInterfaceHtml from './addInnerInterfaceHtml';
+import { getMainPage } from "./mainpage";
+import { initPlugins } from "./initPlugins";
 
 export default () => {
   const appEl = document.querySelector('.app');
@@ -19,7 +20,8 @@ export default () => {
       addInnerInterfaceHtml();
     } else {
       // show login/register app here (login webpage)
-      appEl.innerHTML = testForms; // remove this line, it's just for test
+      appEl.innerHTML = getMainPage();
+      initPlugins();
       initLoginRegForms();
     }
   }, 2000);

@@ -1,0 +1,9 @@
+.footer {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+
+  @media (max-width: $screen-tablet) {
+    width: 90%;
+  }
+}
