@@ -1,6 +1,6 @@
 import md5 from 'md5';
 
-export default () => {
+export default (form) => {
   const data = {};
   [...form.elements].forEach((el) => {
     if (el.getAttribute('name')) {
