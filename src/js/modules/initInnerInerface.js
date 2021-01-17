@@ -14,6 +14,7 @@ import initMobileHeaderMenu from './initMobileHeaderMenu';
 import initShowHideMatchUsercardMobile from './initShowHideMatchUsercardMobile';
 import initShowHideProfileEditor from './initShowHideProfileEditor';
 import initShowHideSettingsMobile from './initShowHideSettingsMobile';
+import initLogout from './initLogout';
 
 export default () => {
   renderUserInfo();
@@ -31,6 +32,7 @@ export default () => {
   initShowHideMatchUsercardMobile();
   initShowHideProfileEditor();
   initShowHideSettingsMobile();
+  initLogout();
 
   const photos = [
     'http://rustartup.com/tinder/images/users/user4-1.jpg',
