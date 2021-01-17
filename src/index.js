@@ -1,4 +1,5 @@
 // import './client';
+
 import './styles/index.scss';
 import addPreloaderHtml from './js/modules/addPreloaderHtml';
 
