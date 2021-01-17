@@ -133,17 +133,24 @@
             <p class="settings__item-name">Location</p>
             <p class="settings__item-value">Minsk, Belarus</p>
           </li>
-          <li class="settings__item settings__item_no-pointer">
+          <li class="settings__item settings__item_no-pointer settings__item_flex-wrap">
             <p class="settings__item-name">Maximum distance</p>
-            <p class="settings__item-value">50 km</p>
+            <p class="settings__item-value">
+              <input type="text" disabled id="sliderDistanceValue" class="settings__input-distance">km
+            </p>
+            <div class="settings__item-slider" id="sliderDistance"></div>
           </li>
           <li class="settings__item settings__item_hover-arrow js-has-nested" data-name="lookingFor">
             <p class="settings__item-name">Looking for</p>
             <p class="settings__item-value">Woman</p>
           </li>
-          <li class="settings__item settings__item_no-pointer">
+          <li class="settings__item settings__item_no-pointer settings__item_flex-wrap">
             <p class="settings__item-name">Age range</p>
-            <p class="settings__item-value">18-39</p>
+            <p class="settings__item-value">
+              <input type="text" disabled id="ageRangeFrom" class="settings__input-age">-<input type="text" disabled
+                id="ageRangeTo" class="settings__input-age settings__input-age_to">
+            </p>
+            <div class="settings__item-slider" id="sliderAgeRange"></div>
           </li>
           <li class="settings__item settings__item_no-pointer">
             <p class="settings__item-name">Global</p>
@@ -294,19 +301,19 @@
           <label class="settings__item" for="newMatchesNotifications">
             <p class="settings__item-name">New matches</p>
             <p class="settings__item-value">
-              <input type="checkbox" name="matches" id="newMatchesNotifications">
+              <input type="checkbox" name="matches" class="custom-checkbox" id="newMatchesNotifications">
             </p>
           </label>
           <label class="settings__item" for="newMessagesNotifications">
             <p class="settings__item-name">Messages</p>
             <p class="settings__item-value">
-              <input type="checkbox" value="messages" id="newMessagesNotifications">
+              <input type="checkbox" value="messages" class="custom-checkbox" id="newMessagesNotifications">
             </p>
           </label>
           <label class="settings__item" for="newPromotionsNotifications">
             <p class="settings__item-name">Promotions</p>
             <p class="settings__item-value">
-              <input type="checkbox" value="promotions" id="newPromotionsNotifications">
+              <input type="checkbox" value="promotions" class="custom-checkbox" id="newPromotionsNotifications">
             </p>
           </label>
           <div class="settings__item settings__item_desc settings__item_no-pointer">

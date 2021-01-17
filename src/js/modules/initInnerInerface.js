@@ -1,4 +1,5 @@
 import renderUserInfo from './renderUserInfo';
+import initSettingsSliders from './initSettingsSliders';
 import initToggleProfileSettings from './initToggleProfileSettings';
 import initMatchesMessagesTabs from './initMatchesMessagesTabs';
 import initMessageSelect from './initMessageSelect';
@@ -16,6 +17,7 @@ import initShowHideSettingsMobile from './initShowHideSettingsMobile';
 
 export default () => {
   renderUserInfo();
+  initSettingsSliders();
   initToggleProfileSettings();
   initMatchesMessagesTabs();
   initMessageSelect();
