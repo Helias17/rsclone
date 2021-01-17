@@ -1,0 +1,145 @@
+.settings {
+  position: absolute;
+  width: 100%;
+  min-width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #f5f7fa;
+  overflow-y: auto;
+  transition: 0.3s;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &_overflow-hidden {
+    overflow: hidden;
+  }
+
+  &_nested {
+    left: 100%;
+  }
+
+  &_nested-active {
+    left: 0;
+  }
+
+  &__title {
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 30px 15px 10px 15px;
+  }
+
+  &__list {
+
+    &_single {
+      margin: 30px 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e8e8e8;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 15px 30px 15px 15px;
+    background: #fff url('../images/arrow-right-settings.svg') no-repeat calc(100% + 50px) center / 18px 18px;
+    transition: 0.3s;
+
+    &_hover-arrow {
+
+      &:hover {
+        background-position: calc(100% - 5px) center;
+      }
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    &_no-pointer {
+      cursor: default;
+    }
+
+    &_desc {
+      background-color: #f5f7fa;
+      border-bottom: none !important;
+    }
+
+    &_center {
+      justify-content: center;
+    }
+  }
+
+  &__item-name {
+    color: #666;
+    font-size: 14px;
+  }
+
+  &__item-value {
+    color: #666;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+
+  &__item-desc {
+    color: #5c5c5c;
+    font-size: 12px;
+
+    &_red {
+      color: #ff0000;
+    }
+
+    &_blue {
+      color: #2180e8;
+    }
+  }
+
+  &__item:hover .settings__item-value {
+    color: #fd5068;
+  }
+
+  &__item-email-status {
+    font-weight: bold;
+
+    &_unverified {
+      color: red;
+    }
+
+    &_verified {  
+      color: #2180e8;
+    }
+  }
+
+  &__about-app {
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+  }
+
+  &__logo {
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+
+  &__authors {
+    padding: 10px 0;
+
+    & a {
+      color: #666;
+      text-decoration: underline;
+      margin: 0 5px;
+      transition: 0.3s;
+
+      &:hover {
+        text-decoration: none;
+        color: #fd5068;
+      }
+    }
+  }
+
+}

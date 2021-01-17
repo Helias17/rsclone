@@ -1,0 +1,49 @@
+.profile-tabs {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  padding: 10px 30px 20px 30px;
+  background-color: #fff;
+  user-select: none;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+
+    &:first-child {
+      margin-right: 30px;
+    }
+
+    &_active {
+      cursor: default;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -5px;
+        height: 3px;
+        background-color: #fd5068;
+      }
+    }
+  }
+
+  &__item-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 11px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fd5068;
+    margin-left: 5px;
+  }
+}
