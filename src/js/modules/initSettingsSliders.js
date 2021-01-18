@@ -1,12 +1,18 @@
 import noUiSlider from 'nouislider';
 import 'nouislider/distribute/nouislider.css';
 import '../../styles/nouislider_add.scss';
+import saveUserInfo from './saveUserInfo';
+import getAuthorizedUser from './getAuthorizedUser';
 
 export default () => {
+  const formSettingsProfile = document.getElementById('formSettingsProfile');
+  const user = getAuthorizedUser();
+  const distance = user.distance ? user.distance : 50;
+
   // init distance slider
   const sliderDistance = document.getElementById('sliderDistance');
   noUiSlider.create(sliderDistance, {
-    start: [50],
+    start: [distance],
     step: 1,
     range: {
       min: [1],
@@ -27,18 +33,21 @@ export default () => {
   });
   // callback after new distance set
   sliderDistance.noUiSlider.on('end', () => {
-    alert(sliderDistanceValueEl.value);
+    saveUserInfo(formSettingsProfile);
   });
+
+  const ageFrom = user.age_range_start ? user.age_range_start : 18;
+  const ageTo = user.age_range_end ? user.age_range_end : 30;
 
   // init age slider
   const sliderAgeRange = document.getElementById('sliderAgeRange');
   noUiSlider.create(sliderAgeRange, {
-    start: [18, 60],
+    start: [ageFrom, ageTo],
     step: 1,
     connect: true,
     range: {
       min: 18,
-      max: 100,
+      max: 99,
     },
     format: {
       to: (value) => parseInt(value, 10),
@@ -61,6 +70,6 @@ export default () => {
 
   // callback after new distance set
   sliderAgeRange.noUiSlider.on('end', () => {
-    alert(`${ageRangeFromEl.value} ${ageRangeToEl.value}`);
+    saveUserInfo(formSettingsProfile);
   });
 };

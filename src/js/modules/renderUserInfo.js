@@ -27,4 +27,28 @@ export default () => {
 
   const userShowmeStatus = document.getElementById('userShowmeStatus');
   userShowmeStatus.checked = user.show_mine === 1;
+
+  let lookingNum = 0;
+  if (user.looking !== null) {
+    lookingNum = user.looking;
+  } else if (user.gender_id !== null) {
+    lookingNum = user.gender_id > 0 ? 0 : 1;
+  }
+  const lookingRadio = document.querySelector(`div[data-name="lookingFor"] input[data-num="${lookingNum}"]`);
+  lookingRadio.checked = true;
+
+  const lookingTitle = document.getElementById('lookingSettingsTitle');
+  switch (lookingNum) {
+    case 0:
+      lookingTitle.textContent = 'Men';
+      break;
+    case 1:
+      lookingTitle.textContent = 'Woman';
+      break;
+    case 2:
+      lookingTitle.textContent = 'Everyone';
+      break;
+
+    default: break;
+  }
 };

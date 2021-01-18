@@ -15,10 +15,12 @@ import initShowHideMatchUsercardMobile from './initShowHideMatchUsercardMobile';
 import initShowHideProfileEditor from './initShowHideProfileEditor';
 import initShowHideSettingsMobile from './initShowHideSettingsMobile';
 import initLogout from './initLogout';
+import initSettingsChangeWatch from './initSettingsChangeWatch';
 
 export default () => {
   renderUserInfo();
   initSettingsSliders();
+  initSettingsChangeWatch();
   initToggleProfileSettings();
   initMatchesMessagesTabs();
   initMessageSelect();
