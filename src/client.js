@@ -53,8 +53,9 @@ const displayAuthorizedUser = async () => {
 };
 
 const loginForm = document.querySelector('#login-form');
-
+console.log(loginForm);
 loginForm.onsubmit = async (event) => {
+  console.log('login');
 // stop our form submission from refreshing the page
   event.preventDefault();
   const data = prepareData(loginForm);
