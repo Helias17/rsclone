@@ -1,5 +1,6 @@
 import { addUser, login } from './users';
 import prepareData from './prepareFormData';
+import addPreloaderHtml from "./addPreloaderHtml";
 
 export default () => {
   const registerForm = document.querySelector('#register-form');
@@ -20,6 +21,7 @@ export default () => {
     const loginUser = await login(data);
     if (loginUser.id) {
       console.log('login', loginUser);
+      addPreloaderHtml();
     } else {
       console.log('login wrong');
     }
