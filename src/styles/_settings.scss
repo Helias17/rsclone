@@ -20,6 +20,7 @@
 
   &_nested {
     left: 100%;
+    z-index: 5;
   }
 
   &_nested-active {
@@ -73,6 +74,10 @@
     &_center {
       justify-content: center;
     }
+
+    &_flex-wrap {
+      flex-wrap: wrap;
+    }
   }
 
   &__item-name {
@@ -99,7 +104,7 @@
     }
   }
 
-  &__item:hover .settings__item-value {
+  &__item:hover .settings__item-value, &__item:hover input[type="text"] {
     color: #fd5068;
   }
 
@@ -112,6 +117,42 @@
 
     &_verified {  
       color: #2180e8;
+    }
+  }
+
+  &__item-slider {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  &__input-distance {
+    width: 35px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1;
+    border: none;
+    background: none;
+    outline: 0;
+    text-align: right;
+    padding-bottom: 3px;
+    margin-right: 5px;
+    transition: 0.3s;
+  }
+
+  &__input-age {
+    width: 30px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1;
+    border: none;
+    background: none;
+    outline: 0;
+    text-align: right;
+    padding-bottom: 3px;
+    transition: 0.3s;
+
+    &_to {
+      text-align: left;
     }
   }
 

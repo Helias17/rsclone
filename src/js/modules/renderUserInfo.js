@@ -2,7 +2,7 @@ export default () => {
   const user = JSON.parse(localStorage.getItem('clone-tinder-user'));
 
   const userAvatar = document.querySelector('.profile-header__user-icon');
-  userAvatar.style.backgroundImage = 'url(\'http://rustartup.com/tinder/images/users/user4-2.jpg\')';
+  userAvatar.style.backgroundImage = 'url(\'http://rustartup.com/tinder/images/users/user1-2.jpg\')';
 
   const userEmail = document.getElementById('userEmailSettings');
   userEmail.textContent = user.email;

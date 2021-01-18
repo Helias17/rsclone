@@ -133,21 +133,28 @@
             <p class="settings__item-name">Location</p>
             <p class="settings__item-value">Minsk, Belarus</p>
           </li>
-          <li class="settings__item settings__item_no-pointer">
+          <li class="settings__item settings__item_no-pointer settings__item_flex-wrap">
             <p class="settings__item-name">Maximum distance</p>
-            <p class="settings__item-value">50 km</p>
+            <p class="settings__item-value">
+              <input type="text" disabled id="sliderDistanceValue" class="settings__input-distance">km
+            </p>
+            <div class="settings__item-slider" id="sliderDistance"></div>
           </li>
           <li class="settings__item settings__item_hover-arrow js-has-nested" data-name="lookingFor">
             <p class="settings__item-name">Looking for</p>
             <p class="settings__item-value">Woman</p>
           </li>
-          <li class="settings__item settings__item_no-pointer">
+          <li class="settings__item settings__item_no-pointer settings__item_flex-wrap">
             <p class="settings__item-name">Age range</p>
-            <p class="settings__item-value">18-39</p>
+            <p class="settings__item-value">
+              <input type="text" disabled id="ageRangeFrom" class="settings__input-age">-<input type="text" disabled
+                id="ageRangeTo" class="settings__input-age settings__input-age_to">
+            </p>
+            <div class="settings__item-slider" id="sliderAgeRange"></div>
           </li>
           <li class="settings__item settings__item_no-pointer">
             <p class="settings__item-name">Global</p>
-            <p class="settings__item-value"><input type="checkbox" id="userGlobalSearch"></p>
+            <p class="settings__item-value"><input type="checkbox" id="userGlobalSearch" class="custom-checkbox"></p>
           </li>
           <li class="settings__item settings__item_desc settings__item_no-pointer">
             <p class="settings__item-desc">
@@ -157,7 +164,7 @@
           </li>
           <li class="settings__item settings__item_no-pointer">
             <p class="settings__item-name">Show me on Tinder</p>
-            <p class="settings__item-value"><input type="checkbox" id="userShowmeStatus"></p>
+            <p class="settings__item-value"><input type="checkbox" id="userShowmeStatus" class="custom-checkbox"></p>
           </li>
           <li class="settings__item settings__item_desc settings__item_no-pointer">
             <p class="settings__item-desc">
@@ -196,7 +203,7 @@
         </ul>
         <ul class="settings__list settings__list_single">
           <li class="settings__item settings__item_center">
-            <p class="settings__item-name">Logout</p>
+            <p class="settings__item-name" id="logoutLink">Logout</p>
           </li>
         </ul>
         <div class="settings__about-app">
@@ -266,19 +273,19 @@
           <label class="settings__item" for="genderMen">
             <p class="settings__item-name">Men</p>
             <p class="settings__item-value">
-              <input type="radio" name="genderSet" value="men" id="genderMen">
+              <input type="radio" name="genderSet" value="men" class="custom-radio" id="genderMen">
             </p>
           </label>
           <label class="settings__item" for="genderWomen">
             <p class="settings__item-name">Women</p>
             <p class="settings__item-value">
-              <input type="radio" name="genderSet" value="women" id="genderWomen">
+              <input type="radio" name="genderSet" value="women" class="custom-radio" id="genderWomen">
             </p>
           </label>
           <label class="settings__item" for="genderEveryone">
             <p class="settings__item-name">Everyone</p>
             <p class="settings__item-value">
-              <input type="radio" name="genderSet" value="everyone" id="genderEveryone">
+              <input type="radio" name="genderSet" value="everyone" class="custom-radio" id="genderEveryone">
             </p>
           </label>
           <div class="settings__item settings__item_desc settings__item_no-pointer">
@@ -294,19 +301,19 @@
           <label class="settings__item" for="newMatchesNotifications">
             <p class="settings__item-name">New matches</p>
             <p class="settings__item-value">
-              <input type="checkbox" name="matches" id="newMatchesNotifications">
+              <input type="checkbox" name="matches" class="custom-checkbox" id="newMatchesNotifications">
             </p>
           </label>
           <label class="settings__item" for="newMessagesNotifications">
             <p class="settings__item-name">Messages</p>
             <p class="settings__item-value">
-              <input type="checkbox" value="messages" id="newMessagesNotifications">
+              <input type="checkbox" value="messages" class="custom-checkbox" id="newMessagesNotifications">
             </p>
           </label>
           <label class="settings__item" for="newPromotionsNotifications">
             <p class="settings__item-name">Promotions</p>
             <p class="settings__item-value">
-              <input type="checkbox" value="promotions" id="newPromotionsNotifications">
+              <input type="checkbox" value="promotions" class="custom-checkbox" id="newPromotionsNotifications">
             </p>
           </label>
           <div class="settings__item settings__item_desc settings__item_no-pointer">
@@ -323,19 +330,19 @@
           <label class="settings__item" for="engLang">
             <p class="settings__item-name">English</p>
             <p class="settings__item-value">
-              <input type="radio" name="langSet" value="English" id="engLang">
+              <input type="radio" name="langSet" value="English" class="custom-radio" id="engLang">
             </p>
           </label>
           <label class="settings__item" for="byLang">
             <p class="settings__item-name">Belarussian</p>
             <p class="settings__item-value">
-              <input type="radio" name="langSet" value="Belarussian" id="byLang">
+              <input type="radio" name="langSet" value="Belarussian" class="custom-radio" id="byLang">
             </p>
           </label>
           <label class="settings__item" for="ruLang">
             <p class="settings__item-name">Russian</p>
             <p class="settings__item-value">
-              <input type="radio" name="langSet" value="Russian" id="ruLang">
+              <input type="radio" name="langSet" value="Russian" class="custom-radio" id="ruLang">
             </p>
           </label>
         </div>
@@ -503,7 +510,7 @@
           <div class="editcard__item">
             <input type="text" class="editcard__input">
             <label for="editcardCityDetect" class="editcard__city-detect">
-              <input type="checkbox" checked class="editcard__checkbox" id="editcardCityDetect">
+              <input type="checkbox" checked class="editcard__checkbox custom-checkbox" id="editcardCityDetect">
               Auto detect my city
             </label>
           </div>
@@ -515,7 +522,7 @@
               Man
             </label>
             <p class="editcard__item-value">
-              <input type="radio" name="editcardGender" id="editcardGenderMan">
+              <input type="radio" name="editcardGender" class="custom-radio" id="editcardGenderMan">
             </p>
           </div>
           <div class="editcard__item editcard__item_flex editcard__item_border-bottom">
@@ -523,7 +530,7 @@
               Woman
             </label>
             <p class="editcard__item-value">
-              <input type="radio" name="editcardGender" id="editcardGenderWoman">
+              <input type="radio" name="editcardGender" class="custom-radio" id="editcardGenderWoman">
             </p>
           </div>
           <div class="editcard__item editcard__item_flex">
@@ -531,7 +538,7 @@
               Trans
             </label>
             <p class="editcard__item-value">
-              <input type="radio" name="editcardGender" id="editcardGenderTrans">
+              <input type="radio" name="editcardGender" class="custom-radio" id="editcardGenderTrans">
             </p>
           </div>
         </div>

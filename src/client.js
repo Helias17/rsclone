@@ -1,4 +1,4 @@
-import { addUser, login, logout, updateUser, deleteUser } from './services/users';
+import { addUser, login, logout, updateUser, deleteUser, addLike, getPairs } from './services/users';
 
 // TODO вынести в хелпер
 const md5 = require('md5');
@@ -18,6 +18,12 @@ const prepareData = (form) => {
 // Если не null, то возвращает все данные по пользователю, обратно - пользователь не авторизован
 const getAuthorizedUser = () => JSON.parse(localStorage.getItem('clone-tinder-user'));
 
+const getUserPairs = async () => {
+  const currentUser = getAuthorizedUser();
+  const userPairs = await getPairs(currentUser.id);
+  return userPairs;
+};
+
 const registerForm = document.querySelector('#register-form');
 
 registerForm.onsubmit = (event) => {
@@ -27,14 +33,19 @@ registerForm.onsubmit = (event) => {
   addUser(data);
 };
 
-const displayAuthorizedUser = () => {
+const displayAuthorizedUser = async () => {
   const currentUser = getAuthorizedUser();
   const currentUserBlock = document.getElementById('current-user');
   const logoutButton = document.getElementById('logout');
 
-  if (currentUser && currentUser.email) {
+  if (currentUser && currentUser.id) {
     currentUserBlock.innerHTML = `${currentUser.name} ${currentUser.email}`;
     logoutButton.style.display = 'block';
+    const userPairs = await getUserPairs(currentUser.id);
+    if (Array.isArray(userPairs) && userPairs.length > 0) {
+      currentUserBlock.innerHTML += ', Пары:';
+      userPairs.forEach((user) => currentUserBlock.innerHTML += user.name);
+    }
   } else {
     currentUserBlock.innerHTML = 'Пользователь не авторизован';
     logoutButton.style.display = 'none';
@@ -86,6 +97,21 @@ document.getElementById('delete-user').onclick = () => {
     displayAuthorizedUser();
   } else {
     console.log('Error deletion profile!!!');
+  }
+};
+
+const likeForm = document.querySelector('#like-form');
+
+likeForm.onsubmit = async (event) => {
+  const currentUser = getAuthorizedUser();
+  if (currentUser && currentUser.id) {
+    event.preventDefault();
+    const data = prepareData(likeForm);
+    data.sender = currentUser.id;
+    const newLike = await addLike(data);
+    if (newLike.message === 'success') {
+      console.log('newLike', newLike);
+    }
   }
 };
 
