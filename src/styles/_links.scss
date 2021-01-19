@@ -51,6 +51,14 @@
       border-width: 0.1rem;
     }
   }
+
+  &__apple-icon {
+    background: center no-repeat url("../images/apple-icon.svg");
+  }
+
+  &__android-icon {
+    background: center no-repeat url("../images/android-icon.svg");
+  }
 }
 
 .social {
