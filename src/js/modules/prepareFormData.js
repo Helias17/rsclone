@@ -10,7 +10,6 @@ export default (form) => {
       } else if (el.getAttribute('type') === 'checkbox') {
         data[nameField] = el.checked ? 1 : 0;
       } else if (el.getAttribute('type') === 'radio' && el.checked === true) {
-        console.log(el.value);
         data[nameField] = el.value;
       } else if (el.getAttribute('type') !== 'radio') {
         data[nameField] = el.value;

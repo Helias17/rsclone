@@ -236,21 +236,11 @@
           <p class="settings__title">E-mail status</p>
           <ul class="settings__list">
             <li class="settings__item settings__item_no-pointer">
-              <p class="settings__item-name" id="userEmailNestedMenu">usermail@yandex.ru</p>
-              <p class="settings__item-email-status" id="userEmailStatus">?</p>
+              <p class="settings__item-name" id="userEmailNestedMenu"></p>
+              <p class="settings__item-email-status" id="userEmailStatus"></p>
             </li>
             <li class="settings__item settings__item_desc settings__item_no-pointer">
               <p class="settings__item-desc settings__item-desc_red" id="userEmailStatusNote">
-                Email unverified (check your inbox)
-              </p>
-            </li>
-            <li class="settings__item settings__item_no-pointer">
-              <p class="settings__item-name">usermail@yandex.ru</p>
-              <p class="settings__item-email-status settings__item-email-status_verified">✔</p>
-            </li>
-            <li class="settings__item settings__item_desc settings__item_no-pointer">
-              <p class="settings__item-desc settings__item-desc_blue">
-                Email verified
               </p>
             </li>
           </ul>
@@ -273,23 +263,26 @@
         </div>
         <div class="settings settings_nested" data-name="lookingFor">
           <p class="settings__title">Looking for</p>
-          <div class="settings__list">
+          <div class="settings__list" id="settingsLooking">
             <label class="settings__item" for="genderMen">
               <p class="settings__item-name">Men</p>
               <p class="settings__item-value">
-                <input type="radio" name="looking" value="0" data-num="0" class="custom-radio" id="genderMen">
+                <input type="radio" name="looking" value="0" data-num="0" data-text="Men" class="custom-radio"
+                  id="genderMen">
               </p>
             </label>
             <label class="settings__item" for="genderWomen">
               <p class="settings__item-name">Women</p>
               <p class="settings__item-value">
-                <input type="radio" name="looking" value="1" data-num="1" class="custom-radio" id="genderWomen">
+                <input type="radio" name="looking" value="1" data-num="1" data-text="Women" class="custom-radio"
+                  id="genderWomen">
               </p>
             </label>
             <label class="settings__item" for="genderEveryone">
               <p class="settings__item-name">Everyone</p>
               <p class="settings__item-value">
-                <input type="radio" name="looking" value="2" data-num="2" class="custom-radio" id="genderEveryone">
+                <input type="radio" name="looking" value="2" data-num="2" data-text="Everyone" class="custom-radio"
+                  id="genderEveryone">
               </p>
             </label>
             <div class="settings__item settings__item_desc settings__item_no-pointer">
@@ -331,7 +324,7 @@
         </div>
         <div class="settings settings_nested" data-name="language">
           <p class="settings__title">Language</p>
-          <div class="settings__list">
+          <div class="settings__list" id="settingsLang">
             <label class="settings__item" for="engLang">
               <p class="settings__item-name">English</p>
               <p class="settings__item-value">
@@ -356,13 +349,13 @@
       <div class="settings settings_nested" data-name="feedback">
         <p class="settings__title">Feedback</p>
         <form class="feedback">
-          <select name="" id="" class="feedback__select">
+          <select name="" class="feedback__select">
             <option value="" disabled selected>Topic</option>
             <option value="">Proposal</option>
             <option value="">Claim</option>
             <option value="">Question</option>
           </select>
-          <textarea name="" id="" cols="30" rows="10" placeholder="Your message" class="feedback__textarea"></textarea>
+          <textarea name="" cols="30" rows="10" placeholder="Your message" class="feedback__textarea"></textarea>
           <button class="btn btn_center">Send</button>
         </form>
       </div>
@@ -452,9 +445,9 @@
           </div>
           <div class="usercard__info usercard__info_visible">
             <div class="usercard__info-header">
-              <p class="usercard__info-name">Dwayne <span class="usercard__info-age">35</span></p>
-              <p class="usercard__gender usercard__gender_man">Man</p>
-              <p class="usercard__city">Lives in <span class="usercard__city-name">Minsk</span></p>
+              <p><span class="usercard__info-name"></span> <span class="usercard__info-age"></span></p>
+              <p class="usercard__gender usercard__gender_man"></p>
+              <p class="usercard__city">Lives in <span class="usercard__city-name"></span></p>
               <ul class="usercard__hobby-list">
                 <li class="usercard__hobby-item">Fashion</li>
                 <li class="usercard__hobby-item">Yoga</li>
@@ -464,8 +457,6 @@
               </ul>
             </div>
             <div class="usercard__info-about">
-              From being called a “big complicated asshole” at 15yrs old 🙋🏽‍♂️ (due to fighting that led to
-              suspension) to now being called “the most likable person in the world”...
             </div>
           </div>
         </div>
@@ -476,77 +467,85 @@
           <button class="btn btn_hidden" id="btnCancelEditProfile">cancel</button>
         </div>
         <div class="editcard">
-          <div class="editcard__gallery">
-            <div class="editcard__gallery-item"
-              style="background-image: url('https://rustartup.com/tinder/images/users/user1-1.jpg');">
+          <form action="" id="formEditUserCard">
+            <div class="editcard__gallery">
+              <div class="editcard__gallery-item"
+                style="background-image: url('https://rustartup.com/tinder/images/users/user1-1.jpg');">
+              </div>
+              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
             </div>
-            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-          </div>
-          <div class="editcard__title">
-            <span class="editcard__title-text">About</span> <span class="editcard__title-name">Dwayne</span>
-          </div>
-          <div class="editcard__item">
-            <textarea name="" class="editcard__about-textarea"></textarea>
-          </div>
-          <div class="editcard__title" id="passionsTitle">
-            passions
-          </div>
-          <div class="editcard__item" id="editcardPassions">
-            <p class="editcard__passion">Reading</p>
-            <p class="editcard__passion editcard__passion_active">Travel</p>
-            <p class="editcard__passion">Dancing</p>
-            <p class="editcard__passion">Surfing</p>
-            <p class="editcard__passion editcard__passion_active">Coffee</p>
-            <p class="editcard__passion">Photography</p>
-            <p class="editcard__passion">Astrology</p>
-            <p class="editcard__passion">Movies</p>
-            <p class="editcard__passion editcard__passion_active">Workout</p>
-            <p class="editcard__passion">Instagram</p>
-          </div>
-          <div class="editcard__title" id="editcardCityTitle">
-            city
-          </div>
-          <div class="editcard__item">
-            <input type="text" class="editcard__input">
-            <label for="editcardCityDetect" class="editcard__city-detect">
-              <input type="checkbox" checked class="editcard__checkbox custom-checkbox" id="editcardCityDetect">
-              Auto detect my city
-            </label>
-          </div>
-          <div class="editcard__title" id="editcardGenderTitle">
-            Gender
-          </div>
-          <div class="editcard__item editcard__item_flex editcard__item_border-bottom">
-            <label class="editcard__item-name" for="editcardGenderMan">
-              Man
-            </label>
-            <p class="editcard__item-value">
-              <input type="radio" name="editcardGender" class="custom-radio" id="editcardGenderMan">
-            </p>
-          </div>
-          <div class="editcard__item editcard__item_flex editcard__item_border-bottom">
-            <label class="editcard__item-name" for="editcardGenderWoman">
-              Woman
-            </label>
-            <p class="editcard__item-value">
-              <input type="radio" name="editcardGender" class="custom-radio" id="editcardGenderWoman">
-            </p>
-          </div>
-          <div class="editcard__item editcard__item_flex">
-            <label class="editcard__item-name" for="editcardGenderTrans">
-              Trans
-            </label>
-            <p class="editcard__item-value">
-              <input type="radio" name="editcardGender" class="custom-radio" id="editcardGenderTrans">
-            </p>
-          </div>
+            <div class="editcard__title">
+              <span class="editcard__title-text">About</span>
+            </div>
+            <div class="editcard__item">
+              <textarea name="about" class="editcard__about-textarea"></textarea>
+            </div>
+            <div class="editcard__title" id="passionsTitle">
+              passions
+            </div>
+            <div class="editcard__item" id="editcardPassions">
+              <p class="editcard__passion">Reading</p>
+              <p class="editcard__passion editcard__passion_active">Travel</p>
+              <p class="editcard__passion">Dancing</p>
+              <p class="editcard__passion">Surfing</p>
+              <p class="editcard__passion editcard__passion_active">Coffee</p>
+              <p class="editcard__passion">Photography</p>
+              <p class="editcard__passion">Astrology</p>
+              <p class="editcard__passion">Movies</p>
+              <p class="editcard__passion editcard__passion_active">Workout</p>
+              <p class="editcard__passion">Instagram</p>
+            </div>
+            <div class="editcard__title" id="editcardCityTitle">
+              city
+            </div>
+            <div class="editcard__item">
+              <input type="text" name="location" class="editcard__input" id="locationEditCard">
+              <label for="editcardCityDetect" class="editcard__city-detect">
+                <input type="checkbox" class="editcard__checkbox custom-checkbox" id="editcardCityDetect">
+                Auto detect my city
+              </label>
+            </div>
+            <div class="editcard__title" id="editcardGenderTitle">
+              Gender
+            </div>
+            <div class="js-genderEditCard">
+              <div class="editcard__item editcard__item_flex editcard__item_border-bottom">
+                <label class="editcard__item-name" for="editcardGenderMan">
+                  Man
+                </label>
+                <p class="editcard__item-value">
+                  <input type="radio" name="gender_id" value="0" data-num="0" data-text="Man" class="custom-radio"
+                    id="editcardGenderMan">
+                </p>
+              </div>
+              <div class="editcard__item editcard__item_flex editcard__item_border-bottom">
+                <label class="editcard__item-name" for="editcardGenderWoman">
+                  Woman
+                </label>
+                <p class="editcard__item-value">
+                  <input type="radio" name="gender_id" value="1" data-num="1" data-text="Woman" class="custom-radio"
+                    id="editcardGenderWoman">
+                </p>
+              </div>
+              <div class="editcard__item editcard__item_flex">
+                <label class="editcard__item-name" for="editcardGenderTrans">
+                  Trans
+                </label>
+                <p class="editcard__item-value">
+                  <input type="radio" name="gender_id" value="2" data-num="2" data-text="Trans" class="custom-radio"
+                    id="editcardGenderTrans">
+                </p>
+              </div>
+            </div>
+
+          </form>
         </div>
       </div>
     </div>

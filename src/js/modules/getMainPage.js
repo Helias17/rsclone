@@ -1,5 +1,4 @@
-export const getMainPage = () => {
-    return `
+export const getMainPage = () => `
         <div class="first-screen">
             <header class="header">
                 <div class="logo-wrapper">
@@ -262,7 +261,7 @@ export const getMainPage = () => {
                                 <label for="password" class="password__label"></label>
                                 <input name="password" class="password__input" type="password" maxlength="30" placeholder="Password">
                                 <input name="name" class="name__input" type="text" maxlength="40" placeholder="Name">
-                                <input name="birth" class="birth__input" type="text" maxlength="8" placeholder="Birth">
+                                <input name="birth" class="birth__input" type="text" maxlength="10" placeholder="Birth">
                                 <select name="gender_id" class="gender">
                                     <option value="1">Male</option>
                                     <option value="2">Female</option>
@@ -325,4 +324,3 @@ export const getMainPage = () => {
             </div>
         </div>
     `;
-};

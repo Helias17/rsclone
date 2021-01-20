@@ -16,11 +16,13 @@ import initShowHideProfileEditor from './initShowHideProfileEditor';
 import initShowHideSettingsMobile from './initShowHideSettingsMobile';
 import initLogout from './initLogout';
 import initSettingsChangeWatch from './initSettingsChangeWatch';
+import initEditUserCard from './initEditUserCard';
 
 export default () => {
   renderUserInfo();
   initSettingsSliders();
   initSettingsChangeWatch();
+  initEditUserCard();
   initToggleProfileSettings();
   initMatchesMessagesTabs();
   initMessageSelect();
