@@ -1,5 +1,4 @@
-export const getMainPage = () => {
-    return `
+export const getMainPage = () => `
         <div class="first-screen">
             <header class="header">
                 <div class="logo-wrapper">
@@ -327,4 +326,3 @@ export const getMainPage = () => {
             </div>
         </div>
     `;
-};
