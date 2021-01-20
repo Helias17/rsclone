@@ -8,7 +8,7 @@ export default () => {
     langMenuTitle.textContent = curLangRadio.value;
   }
 
-  const langRadioAll = document.querySelectorAll('input[name="langSet"]');
+  const langRadioAll = document.querySelectorAll('input[name="lang"]');
 
   langRadioAll.forEach((radio) => {
     radio.addEventListener('change', (e) => {
