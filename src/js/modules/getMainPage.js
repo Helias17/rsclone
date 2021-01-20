@@ -113,8 +113,8 @@ export const getMainPage = () => {
                 <div class="download">
                     <h2 class="download__title">Скачайте приложение!</h2>
                     <div class="download__links">
-                        <a href="#"><img src="images/apple-icon.svg" alt="Установить на iOS"></a>
-                        <a href="#"><img src="images/android-icon.svg" alt="Установить на Android"></a>
+                        <a class="download__apple-icon" href="#"></a>
+                        <a class="download__android-icon" href="#"></a>
                     </div>
                 </div>
                 <div class="social">
