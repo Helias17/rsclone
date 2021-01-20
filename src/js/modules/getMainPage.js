@@ -222,6 +222,7 @@ export const getMainPage = () => {
                     <form id="login-form">
                         <div class="modal__content" id="modal-1-content">
                             <div class="measure">
+                                <span class="modal__error-login"></span>
                                 <label for="email" class="email__label"></label>
                                 <input id="email" name="email" class="email__input" type="email" required="" placeholder="Email">
                                 <label for="password" class="password__label"></label>
@@ -257,6 +258,7 @@ export const getMainPage = () => {
                     <form id="register-form" action="/">
                         <div class="modal__content" id="modal-2-content">
                             <div class="measure">
+                                <span class="modal__error-registration"></span>
                                 <label for="email" class="email__label"></label>
                                 <input name="email" class="email__input" type="email" maxlength="20" placeholder="Email" required>
                                 <label for="password" class="password__label"></label>

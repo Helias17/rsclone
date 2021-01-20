@@ -103,6 +103,14 @@
       background: linear-gradient(262deg, #fd5068, #fd5068);
     }
   }
+
+  &__error-login,
+  &__error-registration {
+    height: 16px;
+    display: block;
+    color: #fd2d7b;
+    font-size: 1.4rem;
+  }
 }
 
 @keyframes mmfadeIn {
