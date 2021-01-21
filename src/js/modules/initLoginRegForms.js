@@ -1,6 +1,7 @@
 import { addUser, login } from './users';
 import prepareData from './prepareFormData';
-import addPreloaderHtml from "./addPreloaderHtml";
+import addPreloaderHtml from './addPreloaderHtml';
+import { getPosition } from './getPosition';
 
 export default () => {
   const registerForm = document.querySelector('#register-form');
@@ -10,17 +11,16 @@ export default () => {
   // stop our form submission from refreshing the page
     event.preventDefault();
     const data = prepareData(registerForm);
-    addUser(data);
 
-    const loginUser = await login(data);
-
-    if (loginUser.id) {
-      console.log('login', loginUser);
-      addPreloaderHtml();
-    } else {
-      registrationErrorMessage.innerHTML = 'The email address is already taken.';
-      console.log('The email address is already taken.');
-    }
+   addUser(data)
+        .then(() => login(data))
+        .then(() => getPosition()) // Geolocation API is available only on HTTPS(secure contexts), and doesn't work on HTTP
+        .then(() => addPreloaderHtml())
+        .catch((err) => {
+          console.log((err));
+          console.log('The email address is already taken.');
+          registrationErrorMessage.innerHTML = 'The email address is already taken.';
+        });
   };
 
   const loginForm = document.querySelector('#login-form');
