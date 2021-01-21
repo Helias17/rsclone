@@ -5,7 +5,15 @@ export default (form) => {
   [...form.elements].forEach((el) => {
     if (el.getAttribute('name')) {
       const nameField = el.getAttribute('name');
-      data[nameField] = nameField === 'password' ? md5(el.value) : el.value;
+      if (nameField === 'password' || el.getAttribute('type') === 'password') {
+        data[nameField] = md5(el.value);
+      } else if (el.getAttribute('type') === 'checkbox') {
+        data[nameField] = el.checked ? 1 : 0;
+      } else if (el.getAttribute('type') === 'radio' && el.checked === true) {
+        data[nameField] = el.value;
+      } else if (el.getAttribute('type') !== 'radio') {
+        data[nameField] = el.value;
+      }
     }
   });
   return data;
