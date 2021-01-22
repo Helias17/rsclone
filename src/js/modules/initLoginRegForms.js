@@ -14,7 +14,7 @@ export default () => {
 
    addUser(data)
         .then(() => login(data))
-        .then(() => getPosition()) // Geolocation API is available only on HTTPS(secure contexts), and doesn't work on HTTP
+        .then(() => getPosition())
         .then(() => addPreloaderHtml())
         .catch((err) => {
           console.log((err));
