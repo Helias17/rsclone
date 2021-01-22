@@ -1,4 +1,4 @@
-const BASE_URL = 'http://vhost154177.cpsite.ru/clone-tinder-api';
+const BASE_URL = 'http://rstinder.com/clone-tinder-api';
 
 export const addUser = async (data) => {
   const response = await fetch(`${BASE_URL}/users`, {
