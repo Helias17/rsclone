@@ -1,4 +1,4 @@
-const BASE_URL = 'https://rsclone-tinder.glitch.me';
+const BASE_URL = 'http://rstinder.com/clone-tinder-api';
 
 export const addUser = async (data) => {
   const response = await fetch(`${BASE_URL}/users`, {
