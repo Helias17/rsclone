@@ -1,3 +1,5 @@
+import renderPassionsEditProfile from './renderPassionsEditProfile';
+
 export default () => {
   const editcard = document.querySelector('.editcard');
   const btnEditProfile = document.getElementById('btnEditProfile');
@@ -21,7 +23,7 @@ export default () => {
 
   btnEditProfile.addEventListener('click', () => {
     editcard.classList.add('editcard_visible');
-
+    renderPassionsEditProfile();
     showEditorButtons();
   });
 

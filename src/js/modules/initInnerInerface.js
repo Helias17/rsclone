@@ -17,12 +17,16 @@ import initShowHideSettingsMobile from './initShowHideSettingsMobile';
 import initLogout from './initLogout';
 import initSettingsChangeWatch from './initSettingsChangeWatch';
 import initEditUserCard from './initEditUserCard';
+import updatePassionsList from './updatePassionsList';
+import initPassionsEditWatch from './initPassionsEditWatch';
 
 export default () => {
   renderUserInfo();
   initSettingsSliders();
   initSettingsChangeWatch();
   initEditUserCard();
+  initPassionsEditWatch();
+  updatePassionsList();
   initToggleProfileSettings();
   initMatchesMessagesTabs();
   initMessageSelect();
