@@ -221,6 +221,7 @@ export const getMainPage = () => `
                     <form id="login-form">
                         <div class="modal__content" id="modal-1-content">
                             <div class="measure">
+                                <span class="modal__error-login"></span>
                                 <label for="email" class="email__label"></label>
                                 <input id="email" name="email" class="email__input" type="email" required="" placeholder="Email">
                                 <label for="password" class="password__label"></label>
@@ -256,12 +257,13 @@ export const getMainPage = () => `
                     <form id="register-form" action="/">
                         <div class="modal__content" id="modal-2-content">
                             <div class="measure">
+                                <span class="modal__error-registration"></span>
                                 <label for="email" class="email__label"></label>
-                                <input name="email" class="email__input" type="email" maxlength="20" placeholder="Email">
+                                <input name="email" class="email__input" type="email" maxlength="20" placeholder="Email" required>
                                 <label for="password" class="password__label"></label>
-                                <input name="password" class="password__input" type="password" maxlength="30" placeholder="Password">
-                                <input name="name" class="name__input" type="text" maxlength="40" placeholder="Name">
-                                <input name="birth" class="birth__input" type="text" maxlength="10" placeholder="Birth">
+                                <input name="password" class="password__input" type="password" maxlength="30" placeholder="Password" required>
+                                <input name="name" class="name__input" type="text" maxlength="40" placeholder="Name" required>
+                                <input name="birth" class="birth__input" type="date" required>
                                 <select name="gender_id" class="gender">
                                     <option value="1">Male</option>
                                     <option value="2">Female</option>
