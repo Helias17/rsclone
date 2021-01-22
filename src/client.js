@@ -1,4 +1,4 @@
-import { addUser, login, logout, updateUser, deleteUser, addLike, getPairs, getWorksheets } from './js/modules/users';
+import { addUser, login, logout, updateUser, deleteUser, addLike, getPairs, getWorksheets, getPassions } from './js/modules/users';
 
 // TODO вынести в хелпер
 const md5 = require('md5');
@@ -29,10 +29,8 @@ const getNextWorksheets = async () => {
   return worksheet;
 };
 
-const displayAuthorizedUser = async () => {
-  if (currentUser && currentUser.id) {
-    console.log(await getNextWorksheets(currentUser.id));
-  }
+const getPassionsList = async () => {
+  const passionsList = await getPassions();
+  console.log(passionsList);
+  return passionsList;
 };
-
-displayAuthorizedUser();

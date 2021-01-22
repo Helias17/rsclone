@@ -71,3 +71,11 @@ export const getWorksheets = async (id) => {
   });
   return response.json();
 };
+
+export const getPassions = async () => {
+  const response = await fetch(`${BASE_URL}/passions`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  return response.json();
+};
