@@ -75,7 +75,9 @@ export const getWorksheets = async (id) => {
 export const getPassions = async () => {
   const response = await fetch(`${BASE_URL}/passions`, {
     method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+    },
   });
   return response.json();
 };
