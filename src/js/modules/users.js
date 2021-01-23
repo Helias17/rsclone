@@ -1,4 +1,4 @@
-const BASE_URL = 'http://rstinder.com/clone-tinder-api';
+const BASE_URL = 'https://cors-anywhere.herokuapp.com/http://rstinder.com/clone-tinder-api';
 
 export const addUser = async (data) => {
   const response = await fetch(`${BASE_URL}/users`, {

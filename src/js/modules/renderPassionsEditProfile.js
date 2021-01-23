@@ -3,7 +3,7 @@ export default () => {
   const passionsContainer = document.getElementById('editcardPassions');
   passionsContainer.innerHTML = '';
 
-  const userPassions = user.education.split(',');
+  const userPassions = user.passions ? user.passions.split(',') : [];
 
   const passionsObj = JSON.parse(localStorage.getItem('passionsTinderClone'));
 
