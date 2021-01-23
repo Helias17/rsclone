@@ -12,7 +12,7 @@ export default async () => {
 
   // if no passions in localStorage or it's older than 600 seconds, then update list from DB
   // and save to localStorage
-  if (!Array.isArray(passionsObj.list) || timeDiff > 600) {
+  if (!passionsObj || !Array.isArray(passionsObj.list) || timeDiff > 600) {
     const loadedPassionsList = await getPassions();
     const date = Date.now();
 
