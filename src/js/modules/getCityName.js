@@ -3,6 +3,8 @@ export async function getCityName(lat, lng) {
     const url = `https://us1.locationiq.com/v1/reverse.php?key=${locationIQToken}&lat=${lat}&lon=${lng}&accept-language=en&format=json`;
     const request = await fetch(url);
     const json = await request.json()
+    const city = json.address.town;
 
-    console.log(`You are here: ${json.address.town}`);
+    console.log(`You are here: ${city}`);
+    return city;
 }

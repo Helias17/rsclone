@@ -1,20 +1,24 @@
-import { getCityName } from './getCityName';
-
 export const getPosition = () => {
-    const options = {
-        enableHighAccuracy: false,
-        timeout: 5000,
-        maximumAge: 0,
-    };
+    return new Promise((resolve, reject) => {
+        let coords;
 
-    const success = (position) => {
-        const crd = position.coords;
-        getCityName(crd.latitude, crd.longitude);
-    };
+        const options = {
+            enableHighAccuracy: false,
+            timeout: 5000,
+            maximumAge: 0,
+        };
 
-    const error = (err) => {
-        console.warn(`ERROR(${err.code}): ${err.message}`);
-    };
+        const success = (position) => {
+            coords =  position.coords;
+            resolve(coords);
 
-    navigator.geolocation.getCurrentPosition(success, error, options);
+        };
+
+        const error = (err) => {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+            reject(coords);
+        };
+
+        navigator.geolocation.getCurrentPosition(success, error, options);
+    });
 };

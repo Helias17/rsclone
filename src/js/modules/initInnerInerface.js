@@ -17,6 +17,9 @@ import initShowHideSettingsMobile from './initShowHideSettingsMobile';
 import initLogout from './initLogout';
 import initSettingsChangeWatch from './initSettingsChangeWatch';
 import initEditUserCard from './initEditUserCard';
+import { getPosition } from './getPosition';
+import { getCityName } from './getCityName';
+import { setCity } from './setCity';
 
 export default () => {
   renderUserInfo();
@@ -37,6 +40,10 @@ export default () => {
   initShowHideProfileEditor();
   initShowHideSettingsMobile();
   initLogout();
+
+  getPosition()
+      .then((coords) => getCityName(coords.latitude, coords.longitude))
+      .then((city) => setCity(city));
 
   const photos = [
     'http://rustartup.com/tinder/images/users/user4-1.jpg',

@@ -1,7 +1,6 @@
 import { addUser, login } from './users';
 import prepareData from './prepareFormData';
 import addPreloaderHtml from './addPreloaderHtml';
-import { getPosition } from './getPosition';
 
 export default () => {
   const registerForm = document.querySelector('#register-form');
@@ -14,7 +13,6 @@ export default () => {
 
    addUser(data)
         .then(() => login(data))
-        .then(() => getPosition())
         .then(() => addPreloaderHtml())
         .catch((err) => {
           console.log((err));
