@@ -1,23 +1,24 @@
-// Geolocation API is available only on HTTPS(secure contexts), and doesn't work on HTTP
 export const getPosition = () => {
-    const options = {
-        enableHighAccuracy: false,
-        timeout: 50000,
-        maximumAge: 0,
-    };
+    return new Promise((resolve, reject) => {
+        let coords;
 
-    const success = (position) => {
-        const crd = position.coords;
+        const options = {
+            enableHighAccuracy: false,
+            timeout: 5000,
+            maximumAge: 0,
+        };
 
-        console.log('Ваше текущее метоположение:');
-        console.log(`Широта: ${crd.latitude}`);
-        console.log(`Долгота: ${crd.longitude}`);
-        console.log(`Плюс-минус ${crd.accuracy} метров.`);
-    };
+        const success = (position) => {
+            coords =  position.coords;
+            resolve(coords);
 
-    const error = (err) => {
-        console.warn(`ERROR(${err.code}): ${err.message}`);
-    };
+        };
 
-    return navigator.geolocation.getCurrentPosition(success, error, options);
+        const error = (err) => {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+            reject(coords);
+        };
+
+        navigator.geolocation.getCurrentPosition(success, error, options);
+    });
 };

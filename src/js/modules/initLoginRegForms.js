@@ -1,7 +1,6 @@
 import { addUser, login } from './users';
 import prepareData from './prepareFormData';
 import addPreloaderHtml from './addPreloaderHtml';
-import { getPosition } from './getPosition';
 
 export default () => {
   const registerForm = document.querySelector('#register-form');
@@ -14,7 +13,6 @@ export default () => {
 
    addUser(data)
         .then(() => login(data))
-        .then(() => getPosition()) // Geolocation API is available only on HTTPS(secure contexts), and doesn't work on HTTP
         .then(() => addPreloaderHtml())
         .catch((err) => {
           console.log((err));
