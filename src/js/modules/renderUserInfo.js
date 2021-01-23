@@ -1,8 +1,9 @@
 export default () => {
   const user = JSON.parse(localStorage.getItem('clone-tinder-user'));
 
+  const userPhotosArr = user.photos ? user.photos.split(',') : [];
   const userAvatar = document.querySelector('.profile-header__user-icon');
-  userAvatar.style.backgroundImage = 'url(\'http://rustartup.com/tinder/images/users/user1-2.jpg\')';
+  userAvatar.style.backgroundImage = userPhotosArr.length > 0 ? `url(${userPhotosArr[0]})` : 'url(\'assets/icon-tinder-orange.svg\')';
 
   const userEmail = document.getElementById('userEmailSettings');
   userEmail.textContent = user.email;

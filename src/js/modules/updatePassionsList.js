@@ -22,5 +22,6 @@ export default async () => {
     };
 
     localStorage.setItem('passionsTinderClone', JSON.stringify(passionsObj));
+    console.log('Passion list updated!');
   }
 };

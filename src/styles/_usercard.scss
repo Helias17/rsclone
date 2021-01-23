@@ -124,6 +124,7 @@
     font-weight: bold;
     color: #fff;
     text-shadow: 0 0 5px rgba(#000, 0.5);
+    margin-right: 10px;
   }
 
   &__showfull {
@@ -146,6 +147,10 @@
 
   &__age {
     font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(#000, 0.5);
+
   }
 
   &__info-header {
@@ -162,6 +167,8 @@
 
   &__info-age {
     font-size: 24px;
+    font-weight: bold;
+    color: #333;
   }
 
   &__info-about {
