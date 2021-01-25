@@ -2,8 +2,8 @@ import preloaderHtml from '../html/preloader.html'; // pink screen with tinder l
 import initLoginRegForms from './initLoginRegForms';
 import checkAuth from './checkAuth';
 import addInnerInterfaceHtml from './addInnerInterfaceHtml';
-import { getMainPage } from './getMainPage';
-import { initPlugins } from './initPlugins';
+import getMainPage from './getMainPage';
+import initPlugins from './initPlugins';
 
 export default () => {
   const appEl = document.querySelector('.app');

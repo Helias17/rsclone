@@ -1,4 +1,4 @@
-export const getMainPage = () => `
+const getMainPage = () => `
         <div class="first-screen">
             <header class="header">
                 <div class="logo-wrapper">
@@ -326,3 +326,5 @@ export const getMainPage = () => `
             </div>
         </div>
     `;
+
+export default getMainPage;
