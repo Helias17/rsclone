@@ -11,14 +11,14 @@ export default () => {
     event.preventDefault();
     const data = prepareData(registerForm);
 
-   addUser(data)
-        .then(() => login(data))
-        .then(() => addPreloaderHtml())
-        .catch((err) => {
-          console.log((err));
-          console.log('The email address is already taken.');
-          registrationErrorMessage.innerHTML = 'The email address is already taken.';
-        });
+    addUser(data)
+      .then(() => login(data))
+      .then(() => addPreloaderHtml())
+      .catch((err) => {
+        console.log((err));
+        console.log('The email address is already taken.');
+        registrationErrorMessage.innerHTML = 'The email address is already taken.';
+      });
   };
 
   const loginForm = document.querySelector('#login-form');

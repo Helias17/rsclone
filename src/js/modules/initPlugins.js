@@ -1,16 +1,23 @@
 import Swiper from 'swiper';
 import MicroModal from 'micromodal';
 
-export const initPlugins = () => {
-    const mySwiper = new Swiper('.swiper-container', {
-        loop: true,
+const initPlugins = () => {
+  const mySwiper = new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+      768: {
         slidesPerView: 3,
-        spaceBetween: 20,
-    });
+      },
+    },
+  });
 
-    MicroModal.init({
-        disableScroll: true,
-        awaitOpenAnimation: true,
-        awaitCloseAnimation: true,
-    });
+  MicroModal.init({
+    disableScroll: true,
+    awaitOpenAnimation: true,
+    awaitCloseAnimation: true,
+  });
 };
+
+export default initPlugins;

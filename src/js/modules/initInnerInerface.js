@@ -19,9 +19,9 @@ import initSettingsChangeWatch from './initSettingsChangeWatch';
 import initEditUserCard from './initEditUserCard';
 import updatePassionsList from './updatePassionsList';
 import initPassionsEditWatch from './initPassionsEditWatch';
-import { getPosition } from './getPosition';
-import { getCityName } from './getCityName';
-import { setCity } from './setCity';
+import getPosition from './getPosition';
+import getCityName from './getCityName';
+import setCity from './setCity';
 import renderUserLikeCard from './renderUserLikeCard';
 import initLikeDislike from './initLikeDislike';
 
@@ -49,11 +49,9 @@ export default () => {
   renderUserLikeCard();
   initLikeDislike();
 
-  /*
   getPosition()
     .then((coords) => getCityName(coords.latitude, coords.longitude))
     .then((city) => setCity(city));
- */
 
   const photos2 = [
     'http://rustartup.com/tinder/images/users/user2-1.jpg',
