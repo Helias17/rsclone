@@ -187,7 +187,7 @@
           <ul class="settings__list">
             <li class="settings__item settings__item_hover-arrow js-has-nested" data-name="language">
               <p class="settings__item-name">Language</p>
-              <p class="settings__item-name" id="langMenuTitle">English</p>
+              <p class="settings__item-name" id="langMenuTitle"></p>
             </li>
           </ul>
           <p class="settings__title">Help and support</p>
@@ -374,7 +374,7 @@
                 <div class="user-slider__arrow-right"></div>
               </div>
               <div class="usercard__short-info" id="mainUserCardShortInfo">
-                <p class="usercard__name">Валя <span class="usercard__age">19</span></p>
+                <p><span class="usercard__name"></span> <span class="usercard__age"></span></p>
                 <p class="usercard__showfull">i</p>
               </div>
               <div class="usercard__hide-fullinfo"></div>
@@ -384,7 +384,7 @@
           </div>
           <div class="usercard__info" id="mainUserCardInfo">
             <div class="usercard__info-header">
-              <p class="usercard__info-name">Валя <span class="usercard__info-age">19</span></p>
+              <p><span class="usercard__info-name"></span> <span class="usercard__info-age"></span></p>
               <p class="usercard__gender usercard__gender_woman">Woman</p>
               <p class="usercard__city">Lives in <span class="usercard__city-name">Minsk</span></p>
               <ul class="usercard__hobby-list">
@@ -409,9 +409,9 @@
           </div>
         </div>
         <div class="usercard__buttons">
-          <div class="usercard__button usercard__button_dislike"></div>
-          <div class="usercard__button usercard__button_superlike"></div>
-          <div class="usercard__button usercard__button_like"></div>
+          <div class="usercard__button usercard__button_dislike" data-name="dislike"></div>
+          <div class="usercard__button usercard__button_superlike" data-name="superlike"></div>
+          <div class="usercard__button usercard__button_like" data-name="like"></div>
         </div>
       </div>
       <div class="keys-panel">
@@ -485,18 +485,8 @@
             <div class="editcard__title" id="passionsTitle">
               passions
             </div>
-            <input type="hidden" name="education" id="editcardSelectedPassions">
+            <input type="hidden" name="passions" id="editcardSelectedPassions">
             <div class="editcard__item" id="editcardPassions">
-              <p class="editcard__passion">Reading</p>
-              <p class="editcard__passion editcard__passion_active">Travel</p>
-              <p class="editcard__passion">Dancing</p>
-              <p class="editcard__passion">Surfing</p>
-              <p class="editcard__passion editcard__passion_active">Coffee</p>
-              <p class="editcard__passion">Photography</p>
-              <p class="editcard__passion">Astrology</p>
-              <p class="editcard__passion">Movies</p>
-              <p class="editcard__passion editcard__passion_active">Workout</p>
-              <p class="editcard__passion">Instagram</p>
             </div>
             <div class="editcard__title" id="editcardCityTitle">
               city

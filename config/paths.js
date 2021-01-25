@@ -11,5 +11,5 @@ module.exports = {
 
   // Static files that get copied to build folder
   // Статические файлы, которые будут скопированы в директорию для файлов сборки
-  public: path.resolve(__dirname, '../public'),
+  public: path.resolve(__dirname, '../src/images'),
 };

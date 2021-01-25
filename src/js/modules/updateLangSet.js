@@ -1,12 +1,12 @@
 export default () => {
-  const curLang = localStorage.getItem('curLang');
+  let curLang = localStorage.getItem('curLang');
   const langMenuTitle = document.getElementById('langMenuTitle');
 
-  if (curLang) {
-    const curLangRadio = document.getElementById(curLang);
-    curLangRadio.checked = true;
-    langMenuTitle.textContent = curLangRadio.value;
-  }
+  curLang = curLang || 'engLang';
+
+  const curLangRadio = document.getElementById(curLang);
+  curLangRadio.checked = true;
+  langMenuTitle.textContent = curLangRadio.value;
 
   const langRadioAll = document.querySelectorAll('input[name="lang"]');
 

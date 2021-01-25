@@ -4,7 +4,7 @@ export default () => {
   passionsContainer.innerHTML = '';
 
   const user = JSON.parse(localStorage.getItem('clone-tinder-user'));
-  const userPassions = user.education.split(',');
+  const userPassions = user.passions ? user.passions.split(',') : [];
 
   const passionsObj = JSON.parse(localStorage.getItem('passionsTinderClone'));
 
