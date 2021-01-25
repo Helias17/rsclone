@@ -49,11 +49,9 @@ export default () => {
   renderUserLikeCard();
   initLikeDislike();
 
-  /*
   getPosition()
     .then((coords) => getCityName(coords.latitude, coords.longitude))
     .then((city) => setCity(city));
- */
 
   const photos2 = [
     'http://rustartup.com/tinder/images/users/user2-1.jpg',

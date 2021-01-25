@@ -5,6 +5,7 @@ export default async () => {
   const user = JSON.parse(localStorage.getItem('clone-tinder-user'));
   const response = await getWorksheets(user.id);
   const userForRate = response[0];
+  console.log('user id: \n', user.id);
   console.log('user for rate: \n', userForRate);
 
   const mainUserCard = document.getElementById('mainUserCard');
