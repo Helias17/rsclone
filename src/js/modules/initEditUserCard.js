@@ -1,4 +1,5 @@
 import saveUserInfo from './saveUserInfo';
+import copySelectedPassionsToInput from './copySelectedPassionsToInput';
 
 export default () => {
   const btnSaveEditProfile = document.getElementById('btnSaveEditProfile');
@@ -31,6 +32,16 @@ export default () => {
       cityEl.classList.add('usercard__city_hidden');
     }
 
+    const passionsContainer = profileUserCard.querySelector('.usercard__hobby-list');
+    passionsContainer.innerHTML = '';
+    const selectedPassions = document.querySelectorAll('.editcard__passion_active');
+    selectedPassions.forEach((item) => {
+      const li = document.createElement('li');
+      li.classList.add('usercard__hobby-item');
+      li.textContent = item.textContent;
+      passionsContainer.append(li);
+    });
+
     const aboutProfileUserCard = profileUserCard.querySelector('.usercard__info-about');
     const aboutEditCard = document.querySelector('.editcard__about-textarea');
     if (aboutEditCard.value) {
@@ -40,6 +51,8 @@ export default () => {
       aboutProfileUserCard.textContent = '';
       aboutProfileUserCard.classList.add('usercard__info-about_hidden');
     }
+
+    copySelectedPassionsToInput();
 
     saveUserInfo(formEditUserCard);
   });

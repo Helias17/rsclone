@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.01//EN" "//www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <title>Загрузка изображения с изменением размеров</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ </head>
+ <body>
+  <h1>Загрузка изображения с изменением размеров</h1>
+  <form method="post" enctype="multipart/form-data" name="fileinfo">
+  <input type="file" name="picture[]" id="files" /> 
+
+  </form>
+ </body>
+ <div></div>
+</html>
+
+<script>
+
+const photos = document.querySelector('input[type="file"]');
+
+const onSelectFile = () => {
+	let formData = new FormData();
+	
+	formData.append('picture[]', photos.files[0]);
+	
+	fetch('http://files.vhost154177.cpsite.ru', {
+        method: 'POST',
+        body: formData,
+    }).then(response => response.json())
+    .then((data) =>  { console.log(data); return data; });
+};
+
+photos.addEventListener('change', onSelectFile, false);
+
+</script>

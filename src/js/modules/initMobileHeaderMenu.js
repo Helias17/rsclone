@@ -1,3 +1,5 @@
+import renderPassionsUserCard from './renderPassionsUserCard';
+
 export default () => {
   const headerMenu = document.querySelector('.mobile-header__list');
   const userCardIcon = document.getElementById('userCardMenuIcon');
@@ -43,6 +45,7 @@ export default () => {
         messenger.classList.remove('inner__messenger_visible');
         profileUsercard.classList.add('inner__profile-usercard_visible');
         setMenuIconActive(profileIcon);
+        renderPassionsUserCard();
       }
     }
   });

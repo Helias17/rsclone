@@ -1,5 +1,6 @@
 import settingsProfile from './settingsProfile.js';
 import hideSettingsNestedMenu from './hideSettingsNestedMenu.js';
+import renderPassionsUserCard from './renderPassionsUserCard';
 
 export default () => {
   const profileHeader = document.querySelector('.profile-header');
@@ -14,6 +15,7 @@ export default () => {
         profileLinkBack.classList.toggle('profile-header__arrow_visible');
         profileSettings.classList.toggle('inner__col1-profile_active');
         profileUsercard.classList.toggle('inner__profile-usercard_visible');
+        renderPassionsUserCard();
       } else {
         hideSettingsNestedMenu();
       }

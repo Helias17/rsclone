@@ -17,6 +17,8 @@ import initShowHideSettingsMobile from './initShowHideSettingsMobile';
 import initLogout from './initLogout';
 import initSettingsChangeWatch from './initSettingsChangeWatch';
 import initEditUserCard from './initEditUserCard';
+import updatePassionsList from './updatePassionsList';
+import initPassionsEditWatch from './initPassionsEditWatch';
 import { getPosition } from './getPosition';
 import { getCityName } from './getCityName';
 import { setCity } from './setCity';
@@ -26,6 +28,8 @@ export default () => {
   initSettingsSliders();
   initSettingsChangeWatch();
   initEditUserCard();
+  initPassionsEditWatch();
+  updatePassionsList();
   initToggleProfileSettings();
   initMatchesMessagesTabs();
   initMessageSelect();
