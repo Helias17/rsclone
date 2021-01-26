@@ -72,6 +72,7 @@ export const getWorksheets = async (id) => {
   const response = await fetch(`${BASE_URL}/worksheets/${id}`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
+    cache: 'no-store',
   });
   return response.json();
 };

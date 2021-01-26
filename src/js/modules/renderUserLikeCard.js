@@ -1,5 +1,6 @@
 import { getWorksheets } from './users';
-import UserSlider from './UserSlider';
+// import UserSlider from './UserSlider';
+import sliderLikeUserCard from './sliderLikeUserCard';
 
 export default async () => {
   const user = JSON.parse(localStorage.getItem('clone-tinder-user'));
@@ -11,9 +12,19 @@ export default async () => {
   const mainUserCard = document.getElementById('mainUserCard');
   mainUserCard.dataset.userId = userForRate.id;
 
-  const slider = new UserSlider(document.getElementById('mainUserCard'));
+  // drop like buttons counter to 0. (counter for prohibite more than 1 click)
+  const likeButtons = mainUserCard.querySelectorAll('.usercard__button');
+  likeButtons.forEach((item) => {
+    const btn = item;
+    btn.dataset.click = 0;
+  });
+
   const photos = userForRate.photos.split(',');
-  slider.init(photos);
+  sliderLikeUserCard.obj.init(photos);
+
+  // hide full card info block, if it was previosly opened
+  const usercardInfo = mainUserCard.querySelector('.usercard__info');
+  usercardInfo.classList.remove('usercard__info_visible');
 
   const nameOnCard = mainUserCard.querySelector('.usercard__name');
   const nameUnderCard = mainUserCard.querySelector('.usercard__info-name');
@@ -40,7 +51,7 @@ export default async () => {
 
   const about = mainUserCard.querySelector('.usercard__info-about');
   if (userForRate.about) {
-    about.textContent = user.about;
+    about.textContent = userForRate.about;
   } else {
     about.textContent = '';
     about.classList.add('usercard__info-about_hidden');

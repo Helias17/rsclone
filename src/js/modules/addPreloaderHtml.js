@@ -5,6 +5,7 @@ import addInnerInterfaceHtml from './addInnerInterfaceHtml';
 import getMainPage from './getMainPage';
 import initPlugins from './initPlugins';
 
+
 export default () => {
   const appEl = document.querySelector('.app');
   appEl.innerHTML = preloaderHtml;
