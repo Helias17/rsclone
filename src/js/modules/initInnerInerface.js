@@ -22,6 +22,7 @@ import initPassionsEditWatch from './initPassionsEditWatch';
 import { getPosition } from './getPosition';
 import { getCityName } from './getCityName';
 import { setCity } from './setCity';
+import sliderLikeUserCard from './sliderLikeUserCard';
 import renderUserLikeCard from './renderUserLikeCard';
 import initLikeDislike from './initLikeDislike';
 
@@ -46,12 +47,14 @@ export default () => {
   initShowHideProfileEditor();
   initShowHideSettingsMobile();
   initLogout();
-  renderUserLikeCard();
   initLikeDislike();
 
   getPosition()
     .then((coords) => getCityName(coords.latitude, coords.longitude))
     .then((city) => setCity(city));
+
+  sliderLikeUserCard.obj = new UserSlider(document.getElementById('mainUserCard'));
+  renderUserLikeCard();
 
   const photos2 = [
     'http://rustartup.com/tinder/images/users/user2-1.jpg',

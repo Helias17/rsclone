@@ -83,7 +83,6 @@ export default class {
     photosEl[num].classList.remove('user-slider__photo_hidden');
 
     this.activePhotoNum = num;
-
     this.updateNavActiveItem();
   }
 
