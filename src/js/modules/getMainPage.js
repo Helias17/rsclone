@@ -16,7 +16,7 @@ const getMainPage = () => `
                             <path fill="" d="M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z">
                             </path>
                         </svg>
-                        <span>Русский</span>
+                        <span class="header__language-span">Русский</span>
                     </button>
                     <button class="header__login" type="button" data-micromodal-trigger="modal-1">ВОЙДИТЕ</button>
                 </div>
@@ -301,19 +301,19 @@ const getMainPage = () => `
                     <div class="modal__content" id="modal-3-content">
                         <ul class="languages">
                             <li class="languages__item">
-                                <button class="languages__button" aria-label="английский" aria-selected="false" lang="en">
+                                <button class="languages__button" id="engLang" aria-label="английский" aria-selected="false" lang="en">
                                     <span class="languages__desc-en">English</span>
                                     <span class="languages__desc-ru">английский</span>
                                 </button>
                             </li>
                             <li class="languages__item selected">
-                                <button class="languages__button" aria-label="русский" aria-selected="true" lang="ru">
+                                <button class="languages__button" id="ruLang" aria-label="русский" aria-selected="true" lang="ru">
                                     <span class="languages__desc-en">Russian</span>
                                     <span class="languages__desc-ru">русский</span>
                                 </button>
                             </li>
                             <li class="languages__item">
-                                <button class="languages__button" aria-label="испанский" aria-selected="false" lang="es">
+                                <button class="languages__button" id="esLang" aria-label="испанский" aria-selected="false" lang="es">
                                     <span class="languages__desc-en">Español</span>
                                     <span class="languages__desc-ru">испанский</span>
                                 </button>
