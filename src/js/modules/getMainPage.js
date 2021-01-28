@@ -38,7 +38,7 @@ const getMainPage = () => `
                         <span class="testimonial__symbol">“</span>
                         <figcaption class="testimonial__title">Лорен Деларменте</figcaption>
                         <hr>
-                        <p>Если ты проводишь время в одиночестве, да еще и интроверт (как я) — не бойся выйти из зоны комфорта.
+                        <p class="testimonial__text">Если ты проводишь время в одиночестве, да еще и интроверт (как я) — не бойся выйти из зоны комфорта.
                             Ты точно найдешь своего человека. В Тиндере я встретила свою любовь и безмерно благодарна за это. ❤
                         </p>
                     </figure>
@@ -48,7 +48,7 @@ const getMainPage = () => `
                         <span class="testimonial__symbol">“</span>
                         <figcaption class="testimonial__title">Габриель и невеста</figcaption>
                         <hr>
-                        <p>Мы познакомились в Тиндере во время самоизоляции. Она из Лафайетта в Индиане, а я из Кливленда, штат Огайо.
+                        <p class="testimonial__text">Мы познакомились в Тиндере во время самоизоляции. Она из Лафайетта в Индиане, а я из Кливленда, штат Огайо.
                             И мы безумно любим друг друга.
                         </p>
                     </figure>
@@ -58,7 +58,7 @@ const getMainPage = () => `
                         <span class="testimonial__symbol">“</span>
                         <figcaption class="testimonial__title">Райан и Линдси Уолш</figcaption>
                         <hr>
-                        <p>…недавно закончила токсичные отношения и создала аккаунт в Тиндере,
+                        <p class="testimonial__text">…недавно закончила токсичные отношения и создала аккаунт в Тиндере,
                             чтобы развеять мысли и встретить кого-то нового.
                             Мы переписывались в чате неделю и решили встретиться в баре, чтобы пообщаться вживую…
                             В общем, 27 июня у нас свадьба.</p>
@@ -70,41 +70,41 @@ const getMainPage = () => `
         <footer class="footer">
             <nav class="navigation">
                 <section class="navigation__block">
-                    <h2>Компания</h2>
+                    <h2 class="navigation__block-title">Компания</h2>
                     <ul>
-                        <li><a href="#">Вакансии</a></li>
-                        <li><a href="#">Контакты</a></li>
-                        <li><a href="#">Безопасность</a></li>
-                        <li><a href="#">Наши подписки</a></li>
+                        <li><a class="navigation__block-link" href="#">Вакансии</a></li>
+                        <li><a class="navigation__block-link" href="#">Контакты</a></li>
+                        <li><a class="navigation__block-link" href="#">Безопасность</a></li>
+                        <li><a class="navigation__block-link" href="#">Наши подписки</a></li>
                     </ul>
                 </section>
                 <section class="navigation__block">
-                    <h2>Сообщество</h2>
+                    <h2 class="navigation__block-title">Сообщество</h2>
                     <ul>
-                        <li><a href="#">Блог</a></li>
-                        <li><a href="#">Технический блог</a></li>
-                        <li><a href="#">Пресса</a></li>
-                        <li><a href="#">Поддержка</a></li>
-                        <li><a href="#">Промокод</a></li>
+                        <li><a class="navigation__block-link" href="#">Блог</a></li>
+                        <li><a class="navigation__block-link" href="#">Технический блог</a></li>
+                        <li><a class="navigation__block-link" href="#">Пресса</a></li>
+                        <li><a class="navigation__block-link" href="#">Поддержка</a></li>
+                        <li><a class="navigation__block-link" href="#">Промокод</a></li>
                     </ul>
                 </section>
                 <section class="navigation__block">
-                    <h2>Партнёрство</h2>
+                    <h2 class="navigation__block-title">Партнёрство</h2>
                     <ul>
-                        <li><a href="#">Hey! Vina</a></li>
-                        <li><a href="#">Spotify</a></li>
+                        <li><a class="navigation__block-link" href="#">Hey! Vina</a></li>
+                        <li><a class="navigation__block-link" href="#">Spotify</a></li>
                     </ul>
                 </section>
                 <section class="navigation__block">
-                    <h2>Юридическая информация</h2>
+                    <h2 class="navigation__block-title">Юридическая информация</h2>
                     <ul>
-                        <li><a href="#">Конфиденциальность</a></li>
-                        <li><a href="#">Условия</a></li>
-                        <li><a href="#">Политика в отношении файлов Cookie</a></li>
-                        <li><a href="#">Центр по безопасности и разработке политик</a></li>
-                        <li><a href="#">Советы по безопасности</a></li>
-                        <li><a href="#">Правила сообщества</a></li>
-                        <li><a href="#">Интеллектуальная собственность</a></li>
+                        <li><a class="navigation__block-link" href="#">Конфиденциальность</a></li>
+                        <li><a class="navigation__block-link" href="#">Условия</a></li>
+                        <li><a class="navigation__block-link" href="#">Политика в отношении файлов Cookie</a></li>
+                        <li><a class="navigation__block-link" href="#">Центр по безопасности и разработке политик</a></li>
+                        <li><a class="navigation__block-link" href="#">Советы по безопасности</a></li>
+                        <li><a class="navigation__block-link" href="#">Правила сообщества</a></li>
+                        <li><a class="navigation__block-link" href="#">Интеллектуальная собственность</a></li>
                     </ul>
                 </section>
             </nav>
@@ -176,12 +176,12 @@ const getMainPage = () => `
                 </div>
             </div>
             <div class="description">
-                <p>Внимание всем одиноким людям — на самом деле вы не одиноки! Если ты хочешь найти любовь, отношения или новых друзей,
+                <p class="description__text">Внимание всем одиноким людям — на самом деле вы не одиноки! Если ты хочешь найти любовь, отношения или новых друзей,
                     то тебе надо в Tinder. Здесь уже образовано более 55 миллиардов пар, а значит ты точно найдешь тех, кто тебе близок.
                     Посмотрим правде в глаза — сейчас все знакомятся онлайн. Tinder — это самое популярное приложение,
                     которым пользуются миллионы парней и девушек для знакомства и общения рядом. К тому же в Tinder рады всем,
                     независимо от сексуальной ориентации и гендерной идентичности.</p>
-                <p>В Tinder ты точно найдешь то, что ищешь. Хочешь новых отношений? Пожалуйста. Ищешь новых друзей? Без проблем.
+                <p class="description__text">В Tinder ты точно найдешь то, что ищешь. Хочешь новых отношений? Пожалуйста. Ищешь новых друзей? Без проблем.
                     Ты учишься в универе и мечтаешь получить максимум от студенческой жизни? Для этого есть Tinder U.
                     Tinder — это не просто сайт знакомств, а целая соцсеть, где самые разные люди со всего мира встречаются,
                     заводят новых друзей и находят свою любовь.</p>
