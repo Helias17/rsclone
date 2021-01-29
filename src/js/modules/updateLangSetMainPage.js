@@ -167,7 +167,9 @@ const updateLang = () => {
       curLang = button.id;
 
       updateMainPage(curLang);
-      MicroModal.close('modal-3');
+
+      // close modal
+      document.querySelectorAll('.modal__overlay')[2].click();
     });
   });
 };
