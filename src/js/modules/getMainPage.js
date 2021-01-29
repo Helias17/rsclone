@@ -306,7 +306,7 @@ const getMainPage = () => `
                                     <span class="languages__desc-ru">английский</span>
                                 </button>
                             </li>
-                            <li class="languages__item selected">
+                            <li class="languages__item">
                                 <button class="languages__button" id="ruLang" aria-label="русский" aria-selected="true" lang="ru">
                                     <span class="languages__desc-en">Russian</span>
                                     <span class="languages__desc-ru">русский</span>

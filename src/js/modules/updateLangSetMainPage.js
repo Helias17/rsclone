@@ -3,6 +3,7 @@ import MicroModal from 'micromodal';
 const updateMainPage = (lang) => {
   const text = {
     ruLang: {
+      language: 'Русский',
       title: 'Свайп вправо',
       loginButton: 'Войдите',
       registerButton: 'Создать аккаунт',
@@ -49,6 +50,7 @@ const updateMainPage = (lang) => {
       ],
     },
     engLang: {
+      language: 'English',
       title: 'Swipe Right®',
       loginButton: 'Log in',
       registerButton: 'Create Account',
@@ -96,6 +98,12 @@ const updateMainPage = (lang) => {
     },
   };
 
+  const headerLangTitle = document.querySelector('.header__language-span');
+  headerLangTitle.textContent = text[lang].language;
+
+  const footerLangButton = document.querySelector('.settings-footer__language-button');
+  footerLangButton.textContent = text[lang].language;
+
   const title = document.querySelector('.content__title');
   title.textContent = text[lang].title;
 
@@ -140,19 +148,17 @@ const updateMainPage = (lang) => {
 
 const updateLang = () => {
   let curLang = localStorage.getItem('curLang');
-  const headerLangTitle = document.querySelector('.header__language-span');
-  const footerLangButton = document.querySelector('.settings-footer__language-button');
-
   curLang = curLang || 'ruLang';
+
+  const languageButton = document.getElementById(curLang);
+  languageButton.classList.add('selected');
+
+  updateMainPage(curLang);
 
   const langButtons = document.querySelectorAll('.languages__button');
 
   langButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      const lang = button.children[0].innerHTML;
-      headerLangTitle.textContent = lang === 'Russian' ? 'Русский' : lang;
-      footerLangButton.textContent = lang === 'Russian' ? 'Русский' : lang;
-
       const selected = document.querySelector('.selected');
       selected.classList.remove('selected');
       button.classList.add('selected');
