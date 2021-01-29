@@ -39,5 +39,14 @@ export default async () => {
       addLike(data).then(() => { renderUserLikeCard(); });
       buttons.dataset.click = '1';
     }
+    if (e.code === 'Enter' && mainUserCard.dataset.state === 'active') {
+      const data = {
+        like: 'superlike',
+        recipient: parseInt(mainUserCard.dataset.userId, 10),
+        sender: parseInt(user.id, 10),
+      };
+      addLike(data).then(() => { renderUserLikeCard(); });
+      buttons.dataset.click = '1';
+    }
   });
 };

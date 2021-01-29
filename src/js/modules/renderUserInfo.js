@@ -55,6 +55,9 @@ export default () => {
     case 2:
       lookingTitle.textContent = 'Woman';
       break;
+    case 3:
+      lookingTitle.textContent = 'Trans';
+      break;
     default: break;
   }
 
