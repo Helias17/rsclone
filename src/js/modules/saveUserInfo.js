@@ -1,6 +1,7 @@
 import getAuthorizedUser from './getAuthorizedUser';
 import prepareData from './prepareFormData';
 import { updateUser } from './users';
+import renderUserLikeCard from './renderUserLikeCard';
 
 export default async (form) => {
   const currentUser = getAuthorizedUser();
@@ -11,8 +12,8 @@ export default async (form) => {
     const upUser = await updateUser(data, currentUser.id);
     if (upUser.id) {
       console.log('user updated', upUser);
-    } else {
-      console.log('user not updated :-(');
+      renderUserLikeCard();
     }
+    console.log('user not updated :-(');
   }
 };
