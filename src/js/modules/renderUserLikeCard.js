@@ -1,6 +1,5 @@
 import { getWorksheets } from './users';
-// import UserSlider from './UserSlider';
-import sliderLikeUserCard from './sliderLikeUserCard';
+import sliders from './sliders';
 
 export default async () => {
   const user = JSON.parse(localStorage.getItem('clone-tinder-user'));
@@ -13,14 +12,11 @@ export default async () => {
   mainUserCard.dataset.userId = userForRate.id;
 
   // drop like buttons counter to 0. (counter for prohibite more than 1 click)
-  const likeButtons = mainUserCard.querySelectorAll('.usercard__button');
-  likeButtons.forEach((item) => {
-    const btn = item;
-    btn.dataset.click = 0;
-  });
+  const likeButtonsBox = mainUserCard.querySelector('.usercard__buttons');
+  likeButtonsBox.dataset.click = '0';
 
   const photos = userForRate.photos.split(',');
-  sliderLikeUserCard.obj.init(photos);
+  sliders.likeCard.init(photos);
 
   // hide full card info block, if it was previosly opened
   const usercardInfo = mainUserCard.querySelector('.usercard__info');
@@ -38,6 +34,18 @@ export default async () => {
   const userForRateAge = (todayDate - userForRateDate) / 31536000000;
   ageOnCard.textContent = parseInt(userForRateAge, 10);
   ageUnderCard.textContent = parseInt(userForRateAge, 10);
+
+  const gender = mainUserCard.querySelector('.usercard__gender');
+  if (parseInt(userForRate.gender_id, 10) === 1) {
+    gender.classList.add('usercard__gender_man');
+    gender.textContent = 'Man';
+  } else if (parseInt(userForRate.gender_id, 10) === 2) {
+    gender.classList.add('usercard__gender_woman');
+    gender.textContent = 'Woman';
+  } else if (parseInt(userForRate.gender_id, 10) === 3) {
+    gender.classList.add('usercard__gender_trans');
+    gender.textContent = 'Trans';
+  }
 
   const cityEl = mainUserCard.querySelector('.usercard__city');
   const cityName = mainUserCard.querySelector('.usercard__city-name');

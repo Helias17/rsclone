@@ -22,12 +22,12 @@ import initPassionsEditWatch from './initPassionsEditWatch';
 import getPosition from './getPosition';
 import getCityName from './getCityName';
 import setCity from './setCity';
-import sliderLikeUserCard from './sliderLikeUserCard';
+import sliders from './sliders';
 import renderUserLikeCard from './renderUserLikeCard';
 import initLikeDislike from './initLikeDislike';
+import renderMatches from './renderMatches';
 
 export default () => {
-  renderUserInfo();
   initSettingsSliders();
   initSettingsChangeWatch();
   initEditUserCard();
@@ -48,13 +48,17 @@ export default () => {
   initShowHideSettingsMobile();
   initLogout();
   initLikeDislike();
+  renderMatches();
 
   getPosition()
     .then((coords) => getCityName(coords.latitude, coords.longitude))
     .then((city) => setCity(city));
 
-  sliderLikeUserCard.obj = new UserSlider(document.getElementById('mainUserCard'));
+  sliders.likeCard = new UserSlider(document.getElementById('mainUserCard'), true);
   renderUserLikeCard();
+
+  sliders.userCard = new UserSlider(document.getElementById('profileUserCard'), false);
+  renderUserInfo();
 
   const photos2 = [
     'http://rustartup.com/tinder/images/users/user2-1.jpg',
@@ -64,13 +68,6 @@ export default () => {
     'http://rustartup.com/tinder/images/users/user2-5.jpg',
   ];
 
-  const photos3 = [
-    'http://rustartup.com/tinder/images/users/user1-1.jpg',
-  ];
-
-  const slider2 = new UserSlider(document.getElementById('matchUserCard'));
+  const slider2 = new UserSlider(document.getElementById('matchUserCard'), false);
   slider2.init(photos2);
-
-  const slider3 = new UserSlider(document.getElementById('profileUserCard'));
-  slider3.init(photos3);
 };

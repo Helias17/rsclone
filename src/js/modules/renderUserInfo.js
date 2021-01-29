@@ -1,9 +1,13 @@
+import userBlankPhoto from '../../images/icon-anonymos-user.png';
+import sliders from './sliders';
+
 export default () => {
   const user = JSON.parse(localStorage.getItem('clone-tinder-user'));
-
-  const userPhotosArr = user.photos ? user.photos.split(',') : [];
+  const userPhotosArr = user.photos ? user.photos.split(',') : [userBlankPhoto];
   const userAvatar = document.querySelector('.profile-header__user-icon');
   userAvatar.style.backgroundImage = userPhotosArr.length > 0 ? `url(${userPhotosArr[0]})` : 'url(\'assets/icon-tinder-orange.svg\')';
+
+  sliders.userCard.init(userPhotosArr);
 
   const userEmail = document.getElementById('userEmailSettings');
   userEmail.textContent = user.email;
@@ -35,7 +39,7 @@ export default () => {
   if (user.looking !== null) {
     lookingNum = user.looking;
   } else if (user.gender_id !== null) {
-    lookingNum = user.gender_id > 0 ? 0 : 1;
+    lookingNum = user.gender_id > 1 ? 1 : 2;
   }
   const lookingRadio = document.querySelector(`div[data-name="lookingFor"] input[data-num="${lookingNum}"]`);
   lookingRadio.checked = true;
@@ -43,15 +47,14 @@ export default () => {
   const lookingTitle = document.getElementById('lookingSettingsTitle');
   switch (lookingNum) {
     case 0:
-      lookingTitle.textContent = 'Men';
-      break;
-    case 1:
-      lookingTitle.textContent = 'Woman';
-      break;
-    case 2:
       lookingTitle.textContent = 'Everyone';
       break;
-
+    case 1:
+      lookingTitle.textContent = 'Men';
+      break;
+    case 2:
+      lookingTitle.textContent = 'Woman';
+      break;
     default: break;
   }
 
@@ -66,13 +69,13 @@ export default () => {
   ageProfileUserCard.textContent = parseInt(userAge, 10);
 
   const genderProfileUserCard = profileUserCard.querySelector('.usercard__gender');
-  if (parseInt(user.gender_id, 10) === 0) {
+  if (parseInt(user.gender_id, 10) === 1) {
     genderProfileUserCard.classList.add('usercard__gender_man');
     genderProfileUserCard.textContent = 'Man';
-  } else if (parseInt(user.gender_id, 10) === 1) {
+  } else if (parseInt(user.gender_id, 10) === 2) {
     genderProfileUserCard.classList.add('usercard__gender_woman');
     genderProfileUserCard.textContent = 'Woman';
-  } else if (parseInt(user.gender_id, 10) === 2) {
+  } else if (parseInt(user.gender_id, 10) === 3) {
     genderProfileUserCard.classList.add('usercard__gender_trans');
     genderProfileUserCard.textContent = 'Trans';
   }

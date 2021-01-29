@@ -265,9 +265,9 @@ const getMainPage = () => `
                                 <input name="name" class="name__input" type="text" maxlength="40" placeholder="Name" required>
                                 <input name="birth" class="birth__input" type="date" required>
                                 <select name="gender_id" class="gender">
-                                    <option value="0">Male</option>
-                                    <option value="1">Female</option>
-                                    <option value="2">Transgender</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                    <option value="3">Transgender</option>
                                 </select>
                             </div>
                         </div>
