@@ -10,13 +10,13 @@ export default () => {
   btnSaveEditProfile.addEventListener('click', () => {
     const curGenderProfileUserCard = profileUserCard.querySelector('.js-genderEditCard input[type="radio"]:checked');
 
-    if (curGenderProfileUserCard.value === '0') {
+    if (curGenderProfileUserCard.value === '1') {
       genderProfileUserCard.classList.add('usercard__gender_man');
       genderProfileUserCard.textContent = 'Man';
-    } else if (curGenderProfileUserCard.value === '1') {
+    } else if (curGenderProfileUserCard.value === '2') {
       genderProfileUserCard.classList.add('usercard__gender_woman');
       genderProfileUserCard.textContent = 'Woman';
-    } else if (curGenderProfileUserCard.value === '2') {
+    } else if (curGenderProfileUserCard.value === '3') {
       genderProfileUserCard.classList.add('usercard__gender_trans');
       genderProfileUserCard.textContent = 'Trans';
     }

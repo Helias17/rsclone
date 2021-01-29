@@ -31,28 +31,13 @@
     </div>
     <ul class="profile-tabs">
       <li class="profile-tabs__item profile-tabs__item_active" id="matchesTab">Matches <span
-          class="profile-tabs__item-num" id="newMatchesNum">1</span></li>
+          class="profile-tabs__item-num" id="newMatchesNum"></span></li>
       <li class="profile-tabs__item" id="messagesTab">Messages <span class="profile-tabs__item-num"
           id="newMessagesNum">2</span></li>
     </ul>
     <div class="inner__col1-box">
       <div class="matches">
         <ul class="matches__list">
-          <li class="matches__item matches__item_1">
-            <p class="matches__item-title">Леля</p>
-          </li>
-          <li class="matches__item matches__item_2">
-            <p class="matches__item-title">Irene</p>
-          </li>
-          <li class="matches__item matches__item_3">
-            <p class="matches__item-title">Валя</p>
-          </li>
-          <li class="matches__item matches__item_4">
-            <p class="matches__item-title">Alena</p>
-          </li>
-          <li class="matches__item matches__item_5">
-            <p class="matches__item-title">Незнакомка</p>
-          </li>
         </ul>
       </div>
       <div class="messages messages_hidden">
@@ -132,7 +117,7 @@
           <ul class="settings__list">
             <li class="settings__item settings__item_no-pointer">
               <p class="settings__item-name">Location</p>
-              <p class="settings__item-value">Minsk, Belarus</p>
+              <p class="settings__item-value">undefined</p>
             </li>
             <li class="settings__item settings__item_no-pointer settings__item_flex-wrap">
               <p class="settings__item-name">Maximum distance</p>
@@ -143,7 +128,7 @@
             </li>
             <li class="settings__item settings__item_hover-arrow js-has-nested" data-name="lookingFor">
               <p class="settings__item-name">Looking for</p>
-              <p class="settings__item-value" id="lookingSettingsTitle">Woman</p>
+              <p class="settings__item-value" id="lookingSettingsTitle"></p>
             </li>
             <li class="settings__item settings__item_no-pointer settings__item_flex-wrap">
               <p class="settings__item-name">Age range</p>
@@ -267,21 +252,28 @@
             <label class="settings__item" for="genderMen">
               <p class="settings__item-name">Men</p>
               <p class="settings__item-value">
-                <input type="radio" name="looking" value="0" data-num="0" data-text="Men" class="custom-radio"
+                <input type="radio" name="looking" value="1" data-num="1" data-text="Men" class="custom-radio"
                   id="genderMen">
               </p>
             </label>
             <label class="settings__item" for="genderWomen">
               <p class="settings__item-name">Women</p>
               <p class="settings__item-value">
-                <input type="radio" name="looking" value="1" data-num="1" data-text="Women" class="custom-radio"
+                <input type="radio" name="looking" value="2" data-num="2" data-text="Women" class="custom-radio"
                   id="genderWomen">
+              </p>
+            </label>
+            <label class="settings__item" for="genderTrans">
+              <p class="settings__item-name">Trans</p>
+              <p class="settings__item-value">
+                <input type="radio" name="looking" value="3" data-num="3" data-text="Trans" class="custom-radio"
+                  id="genderTrans">
               </p>
             </label>
             <label class="settings__item" for="genderEveryone">
               <p class="settings__item-name">Everyone</p>
               <p class="settings__item-value">
-                <input type="radio" name="looking" value="2" data-num="2" data-text="Everyone" class="custom-radio"
+                <input type="radio" name="looking" value="0" data-num="0" data-text="Everyone" class="custom-radio"
                   id="genderEveryone">
               </p>
             </label>
@@ -363,7 +355,7 @@
   </div>
   <div class="inner__col2">
     <div class="inner__main-usercard">
-      <div class="usercard" id="mainUserCard">
+      <div class="usercard" id="mainUserCard" data-state="active">
         <div class="usercard__inner">
           <div class="usercard__slider">
             <div class="user-slider">
@@ -493,10 +485,6 @@
             </div>
             <div class="editcard__item">
               <input type="text" name="location" class="editcard__input" id="locationEditCard">
-              <label for="editcardCityDetect" class="editcard__city-detect">
-                <input type="checkbox" class="editcard__checkbox custom-checkbox" id="editcardCityDetect">
-                Auto detect my city
-              </label>
             </div>
             <div class="editcard__title" id="editcardGenderTitle">
               Gender
@@ -507,7 +495,7 @@
                   Man
                 </label>
                 <p class="editcard__item-value">
-                  <input type="radio" name="gender_id" value="0" data-num="0" data-text="Man" class="custom-radio"
+                  <input type="radio" name="gender_id" value="1" data-num="1" data-text="Man" class="custom-radio"
                     id="editcardGenderMan">
                 </p>
               </div>
@@ -516,7 +504,7 @@
                   Woman
                 </label>
                 <p class="editcard__item-value">
-                  <input type="radio" name="gender_id" value="1" data-num="1" data-text="Woman" class="custom-radio"
+                  <input type="radio" name="gender_id" value="2" data-num="2" data-text="Woman" class="custom-radio"
                     id="editcardGenderWoman">
                 </p>
               </div>
@@ -525,7 +513,7 @@
                   Trans
                 </label>
                 <p class="editcard__item-value">
-                  <input type="radio" name="gender_id" value="2" data-num="2" data-text="Trans" class="custom-radio"
+                  <input type="radio" name="gender_id" value="3" data-num="3" data-text="Trans" class="custom-radio"
                     id="editcardGenderTrans">
                 </p>
               </div>
