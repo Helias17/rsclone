@@ -48,6 +48,19 @@ const updateMainPage = (lang) => {
         'Внимание всем одиноким людям — на самом деле вы не одиноки! Если ты хочешь найти любовь, отношения или новых друзей, то тебе надо в Tinder. Здесь уже образовано более 55 миллиардов пар, а значит ты точно найдешь тех, кто тебе близок. Посмотрим правде в глаза — сейчас все знакомятся онлайн. Tinder — это самое популярное приложение, которым пользуются миллионы парней и девушек для знакомства и общения рядом. К тому же в Tinder рады всем, независимо от сексуальной ориентации и гендерной идентичности.',
         'В Tinder ты точно найдешь то, что ищешь. Хочешь новых отношений? Пожалуйста. Ищешь новых друзей? Без проблем. Ты учишься в универе и мечтаешь получить максимум от студенческой жизни? Для этого есть Tinder U. Tinder — это не просто сайт знакомств, а целая соцсеть, где самые разные люди со всего мира встречаются, заводят новых друзей и находят свою любовь.',
       ],
+      modalTitles: [
+        'Введите ваш email и пароль',
+        'Введите ваши данные',
+        'Русский',
+      ],
+      modalButtons: 'Продолжить',
+      passwordInputs: 'Пароль',
+      nameInput: 'Имя',
+      gender: [
+        'Мужчина',
+        'Женщина',
+        'Транс',
+      ],
     },
     engLang: {
       language: 'English',
@@ -94,6 +107,19 @@ const updateMainPage = (lang) => {
       descriptions: [
         'Single people, listen up: If you’re looking for love, want to start dating, or just keep it casual, you need to be on Tinder. With over 55 billion matches made, it’s the place to be to meet your next best match. Let’s be real, the dating landscape looks very different today, as most people are meeting online. With Tinder, the world’s most popular free dating app, you have millions of other single people at your fingertips and they’re all ready to meet someone like you. Whether you’re straight or in the LGBTQIA community, Tinder’s here to bring you all the sparks.',
         'There really is something for everyone on Tinder. Want to get into a relationship? You got it. Trying to find some new friends? Say no more. New kid on campus and looking to make the most of your college experience? Tinder U’s got you covered. Tinder isn’t your average dating site — it’s the most diverse dating app, where adults of all backgrounds and experiences are invited to make connections, memories, and everything in between.',
+      ],
+      modalTitles: [
+        'Enter your email and password',
+        'Create Account',
+        'English',
+      ],
+      modalButtons: 'Continue',
+      passwordInputs: 'Password',
+      nameInput: 'Name',
+      gender: [
+        'Male',
+        'Female',
+        'Transgender',
       ],
     },
   };
@@ -144,6 +170,25 @@ const updateMainPage = (lang) => {
 
   const copyright = document.querySelector('.copyright');
   copyright.textContent = text[lang].copyright;
+
+  const modalTitles = document.querySelectorAll('.modal__title');
+  // eslint-disable-next-line no-param-reassign,no-return-assign
+  modalTitles.forEach((item, i) => item.textContent = text[lang].modalTitles[i]);
+
+  const modalButtons = document.querySelectorAll('.modal__btn-primary');
+  // eslint-disable-next-line no-param-reassign,no-return-assign
+  modalButtons.forEach((item) => item.value = text[lang].modalButtons);
+
+  const passwordInputs = document.querySelectorAll('.password__input');
+  // eslint-disable-next-line no-param-reassign,no-return-assign
+  passwordInputs.forEach((item) => item.placeholder = text[lang].passwordInputs);
+
+  const nameInput = document.querySelector('.name__input');
+  nameInput.placeholder = text[lang].nameInput;
+
+  const gender = document.querySelector('.gender');
+  // eslint-disable-next-line no-return-assign,no-param-reassign
+  [...gender].forEach((item, i) => item.textContent = text[lang].gender[i]);
 };
 
 const updateLang = () => {
