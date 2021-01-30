@@ -3,6 +3,7 @@ import { getPairs } from './users';
 export default async () => {
   const user = JSON.parse(localStorage.getItem('clone-tinder-user'));
   const matches = await getPairs(user.id);
+  localStorage.setItem('clone-tinder-matches', JSON.stringify(matches));
   const matchesNum = document.getElementById('newMatchesNum');
 
   const matchesList = document.querySelector('.matches__list');
@@ -14,7 +15,7 @@ export default async () => {
       const photos = card.photos.split(',');
       return `
       ${html}
-      <li class="matches__item" style="background-image: url('${photos[0]}');">
+      <li class="matches__item" data-userid="${card.id}" style="background-image: url('${photos[0]}');">
       <p class="matches__item-title">${card.name}</p>
       </li>`;
     }, '');

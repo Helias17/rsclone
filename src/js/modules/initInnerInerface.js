@@ -60,14 +60,5 @@ export default () => {
   sliders.userCard = new UserSlider(document.getElementById('profileUserCard'), false);
   renderUserInfo();
 
-  const photos2 = [
-    'http://rustartup.com/tinder/images/users/user2-1.jpg',
-    'http://rustartup.com/tinder/images/users/user2-2.jpg',
-    'http://rustartup.com/tinder/images/users/user2-3.jpg',
-    'http://rustartup.com/tinder/images/users/user2-4.jpg',
-    'http://rustartup.com/tinder/images/users/user2-5.jpg',
-  ];
-
-  const slider2 = new UserSlider(document.getElementById('matchUserCard'), false);
-  slider2.init(photos2);
+  sliders.matchCard = new UserSlider(document.getElementById('matchUserCard'), false);
 };

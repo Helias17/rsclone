@@ -1,3 +1,5 @@
+import renderMessenger from './renderMessenger';
+
 export default () => {
   const matchList = document.querySelector('.matches__list');
   const messengerEl = document.querySelector('.inner__messenger');
@@ -12,6 +14,7 @@ export default () => {
       messengerEl.classList.add('inner__messenger_visible');
       col2.classList.remove('inner__col2_hidden-mobile');
       mainUserCard.dataset.state = 'inactive'; // state for keyboard buttons support
+      renderMessenger(clickedUser.dataset.userid);
     }
   });
 
