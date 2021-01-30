@@ -53,6 +53,7 @@
   &__header-title {
     flex-grow: 1;
     color: #5c5c5c;
+    font-size: 16px;
   }
 
   &__years {
@@ -116,12 +117,6 @@
   &__body {
     position: relative;
     flex-grow: 1;
-
-    &_promo {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
   }
 
   &__footer {
@@ -172,6 +167,12 @@
 
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    &_promo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
   }
