@@ -4,6 +4,8 @@ const BASE_URL = 'http://rstinder.com/clone-tinder-api';
 // https://cors-anywhere.herokuapp.com/
 // https://thingproxy.freeboard.io/fetch/
 
+const getAuthorizedUser = () => JSON.parse(localStorage.getItem('clone-tinder-user'));
+
 export const addUser = async (data) => {
   const response = await fetch(`${BASE_URL}/users`, {
     method: 'POST',
@@ -41,8 +43,9 @@ export const updateUser = async (data, id) => {
   return user;
 };
 
-export const deleteUser = async (id) => {
-  const response = await fetch(`${BASE_URL}/users/${id}`, {
+export const deleteUser = async () => {
+  const currentUser = getAuthorizedUser();
+  const response = await fetch(`${BASE_URL}/users/${currentUser.id}`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
   });
@@ -76,15 +79,13 @@ export const getUsers = async () => {
   return response.json();
 };
 
-const getAuthorizedUser = () => JSON.parse(localStorage.getItem('clone-tinder-user'));
-const currentUser = getAuthorizedUser();
-
 const getAllUsers = async () => {
   const users = await getUsers();
   return users;
 };
 
 export const addLikesFromAllUsers = async () => {
+  const currentUser = getAuthorizedUser();
   const allUsers = await getAllUsers();
   allUsers.forEach((user) => {
     if (user.gender_id !== currentUser.gender_id) {
