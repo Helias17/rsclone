@@ -1,5 +1,4 @@
 const BASE_URL = 'http://rstinder.com/clone-tinder-api';
-//const BASE_URL = 'http://localhost:2249/clone-tinder-api';
 
 // proxy list to solve CORS error
 // https://cors-anywhere.herokuapp.com/
