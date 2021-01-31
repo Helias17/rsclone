@@ -198,10 +198,10 @@ const updateInnerInterface = (lang) => {
   profileTitle.textContent = text[lang].profileTitle;
 
   const matchesTab = document.getElementById('matchesTab');
-  matchesTab.textContent = text[lang].matchesTab;
+  matchesTab.firstChild.textContent = text[lang].matchesTab;
 
   const messagesTab = document.getElementById('messagesTab');
-  messagesTab.textContent = text[lang].messagesTab;
+  messagesTab.firstChild.textContent = text[lang].messagesTab;
 
   const settingsTitles = document.querySelectorAll('.settings__title');
   // eslint-disable-next-line no-param-reassign,no-return-assign
