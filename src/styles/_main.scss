@@ -15,7 +15,7 @@
 
 .background {
   position: absolute;
-  background-image: url('../images/tinder-main.png');
+  background-image: url('https://rstinder.com/assets/tinder-main.png');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -26,7 +26,7 @@
   z-index: -1;
 
   @media (max-width: $screen-tablet) {
-    background-image: url('../images/tinder-main-tablet.png');
+    background-image: url('https://rstinder.com/assets/tinder-main-tablet.png');
     background-attachment: inherit;
   }
 }

@@ -27,22 +27,6 @@
     &:hover {
       transform: scale(1.05);
     }
-
-    &_1 {
-      background-image: url('../images/users/user2-1.jpg');
-    }
-    &_2 {
-      background-image: url('../images/users/user3-1.jpg');
-    }
-    &_3 {
-      background-image: url('../images/users/user4-1.jpg');
-    }
-    &_4 {
-      background-image: url('../images/users/user5-1.jpg');
-    }
-    &_5 {
-      background-image: url('../images/users/user6-1.jpg');
-    }
   }
 
   &__item-title {
@@ -56,5 +40,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-shadow: 0 0 3px rgba(#000, 0.3);
+  }
+
+  &__item-no-matches {
+    font-size: 14px;
+    color: #333;
   }
 }

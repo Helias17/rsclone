@@ -1,4 +1,8 @@
-const BASE_URL = 'https://cors-anywhere.herokuapp.com/http://rstinder.com/clone-tinder-api';
+const BASE_URL = 'https://rstinder.com/clone-tinder-api';
+
+// proxy list to solve CORS error
+// https://cors-anywhere.herokuapp.com/
+// https://thingproxy.freeboard.io/fetch/
 
 export const addUser = async (data) => {
   const response = await fetch(`${BASE_URL}/users`, {
@@ -64,10 +68,37 @@ export const getPairs = async (id) => {
   return response.json();
 };
 
+export const getUsers = async () => {
+  const response = await fetch(`${BASE_URL}/users`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  return response.json();
+};
+
+const getAuthorizedUser = () => JSON.parse(localStorage.getItem('clone-tinder-user'));
+const currentUser = getAuthorizedUser();
+
+const getAllUsers = async () => {
+  const users = await getUsers();
+  return users;
+};
+
+export const addLikesFromAllUsers = async () => {
+  const allUsers = await getAllUsers();
+  allUsers.forEach((user) => {
+    if (user.gender_id !== currentUser.gender_id) {
+      const data = { sender: user.id, recipient: currentUser.id, like: 'like' };
+      addLike(data);
+    }
+  });
+};
+
 export const getWorksheets = async (id) => {
   const response = await fetch(`${BASE_URL}/worksheets/${id}`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
+    cache: 'no-store',
   });
   return response.json();
 };

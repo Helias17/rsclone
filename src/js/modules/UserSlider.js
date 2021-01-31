@@ -1,7 +1,8 @@
 export default class {
-  constructor(slider) {
+  constructor(slider, keyboard) {
     this.slider = slider;
     this.isInitialized = false;
+    this.keyboardSupport = keyboard; // true, false
     this.activePhotoNum = 0;
     this.photosBox = slider.querySelector('.user-slider__photo-box');
     this.photos = [];
@@ -22,16 +23,18 @@ export default class {
     });
   }
 
-  initKeySpacebar() {
-    document.addEventListener('keyup', (e) => {
-      if (e.code === 'Space') {
-        if (this.activePhotoNum < this.photos.length - 1) {
-          this.slidePhoto(this.activePhotoNum + 1);
-        } else {
-          this.slidePhoto(0);
+  initKeyboard() {
+    if (this.keyboardSupport) {
+      document.addEventListener('keyup', (e) => {
+        if (e.code === 'Space' && this.photos.length > 1) {
+          if (this.activePhotoNum < this.photos.length - 1) {
+            this.slidePhoto(this.activePhotoNum + 1);
+          } else {
+            this.slidePhoto(0);
+          }
         }
-      }
-    });
+      });
+    }
   }
 
   initNavItems() {
@@ -83,7 +86,6 @@ export default class {
     photosEl[num].classList.remove('user-slider__photo_hidden');
 
     this.activePhotoNum = num;
-
     this.updateNavActiveItem();
   }
 
@@ -127,7 +129,7 @@ export default class {
     this.initNavItems();
     this.addArrowsListeners();
     this.updateArrowsDisplay();
-    this.initKeySpacebar();
+    this.initKeyboard();
     this.isInitialized = true;
     return false;
   }

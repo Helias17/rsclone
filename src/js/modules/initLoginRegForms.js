@@ -1,4 +1,4 @@
-import { addUser, login } from './users';
+import { addUser, login, addLikesFromAllUsers } from './users';
 import prepareData from './prepareFormData';
 import addPreloaderHtml from './addPreloaderHtml';
 
@@ -14,6 +14,7 @@ export default () => {
     addUser(data)
       .then(() => login(data))
       .then(() => addPreloaderHtml())
+      .then(() => addLikesFromAllUsers())
       .catch((err) => {
         console.log((err));
         console.log('The email address is already taken.');

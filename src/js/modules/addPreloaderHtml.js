@@ -6,6 +6,7 @@ import getMainPage from './getMainPage';
 import initPlugins from './initPlugins';
 import updateLang from './updateLangSetMainPage';
 
+
 export default () => {
   const appEl = document.querySelector('.app');
   appEl.innerHTML = preloaderHtml;

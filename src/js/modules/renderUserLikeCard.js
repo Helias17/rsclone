@@ -1,18 +1,26 @@
 import { getWorksheets } from './users';
-import UserSlider from './UserSlider';
+import sliders from './sliders';
 
 export default async () => {
   const user = JSON.parse(localStorage.getItem('clone-tinder-user'));
   const response = await getWorksheets(user.id);
   const userForRate = response[0];
-  console.log('user for rate: \n', userForRate);
+  console.log('Authorized user id: \n', user.id);
+  console.log('User for rate info: \n', userForRate);
 
   const mainUserCard = document.getElementById('mainUserCard');
   mainUserCard.dataset.userId = userForRate.id;
 
-  const slider = new UserSlider(document.getElementById('mainUserCard'));
+  // drop like buttons counter to 0. (counter for prohibite more than 1 click)
+  const likeButtonsBox = mainUserCard.querySelector('.usercard__buttons');
+  likeButtonsBox.dataset.click = '0';
+
   const photos = userForRate.photos.split(',');
-  slider.init(photos);
+  sliders.likeCard.init(photos);
+
+  // hide full card info block, if it was previosly opened
+  const usercardInfo = mainUserCard.querySelector('.usercard__info');
+  usercardInfo.classList.remove('usercard__info_visible');
 
   const nameOnCard = mainUserCard.querySelector('.usercard__name');
   const nameUnderCard = mainUserCard.querySelector('.usercard__info-name');
@@ -27,6 +35,18 @@ export default async () => {
   ageOnCard.textContent = parseInt(userForRateAge, 10);
   ageUnderCard.textContent = parseInt(userForRateAge, 10);
 
+  const gender = mainUserCard.querySelector('.usercard__gender');
+  if (parseInt(userForRate.gender_id, 10) === 1) {
+    gender.classList.add('usercard__gender_man');
+    gender.textContent = 'Man';
+  } else if (parseInt(userForRate.gender_id, 10) === 2) {
+    gender.classList.add('usercard__gender_woman');
+    gender.textContent = 'Woman';
+  } else if (parseInt(userForRate.gender_id, 10) === 3) {
+    gender.classList.add('usercard__gender_trans');
+    gender.textContent = 'Trans';
+  }
+
   const cityEl = mainUserCard.querySelector('.usercard__city');
   const cityName = mainUserCard.querySelector('.usercard__city-name');
 
@@ -39,7 +59,7 @@ export default async () => {
 
   const about = mainUserCard.querySelector('.usercard__info-about');
   if (userForRate.about) {
-    about.textContent = user.about;
+    about.textContent = userForRate.about;
   } else {
     about.textContent = '';
     about.classList.add('usercard__info-about_hidden');
