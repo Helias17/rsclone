@@ -26,6 +26,7 @@ import sliders from './sliders';
 import renderUserLikeCard from './renderUserLikeCard';
 import initLikeDislike from './initLikeDislike';
 import renderMatches from './renderMatches';
+import initDeleteAccount from './deleteAccount';
 
 export default () => {
   initSettingsSliders();
@@ -49,6 +50,7 @@ export default () => {
   initLogout();
   initLikeDislike();
   renderMatches();
+  initDeleteAccount();
 
   getPosition()
     .then((coords) => getCityName(coords.latitude, coords.longitude))
