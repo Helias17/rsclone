@@ -30,9 +30,7 @@ export default () => {
   // stop our form submission from refreshing the page
     event.preventDefault();
     const data = prepareData(loginForm);
-    console.log(data);
     const loginUser = await login(data);
-    console.log(loginUser);
     if (loginUser.id) {
       console.log('login', loginUser);
       addPreloaderHtml();
