@@ -32,6 +32,7 @@ const updateInnerInterface = (lang) => {
         null,
         'Мужчины',
         'Женщины',
+        'Трансы',
         'Всех',
         'Новые пары',
         'Сообщения',
@@ -118,7 +119,7 @@ const updateInnerInterface = (lang) => {
         'Show me on Tinder',
         'Email',
         'Language',
-        'English',
+        'Russian',
         'Feedback form',
         'Cookie policy',
         'Terms of service',
@@ -127,6 +128,7 @@ const updateInnerInterface = (lang) => {
         null,
         'Men',
         'Women',
+        'Trans',
         'Everyone',
         'New matches',
         'Messages',
@@ -180,16 +182,16 @@ const updateInnerInterface = (lang) => {
       autoDetectCity: 'Auto detect my city',
       profileSaveButton: 'Save',
       profileCancelButton: 'Cancel',
+      panelHideButton: 'Hide',
+      panelButtons: [
+        'dislike',
+        'like',
+        'open profile',
+        'close profile',
+        'super like',
+        'next photo',
+      ],
     },
-    panelHideButton: 'Hide',
-    panelButtons: [
-      'dislike',
-      'like',
-      'open profile',
-      'close profile',
-      'super like',
-      'next photo',
-    ],
   };
 
   const profileTitle = document.querySelector('.profile-header__title');
@@ -256,9 +258,6 @@ const updateInnerInterface = (lang) => {
   // eslint-disable-next-line no-param-reassign,no-return-assign
   editProfileGenders.forEach((item, i) => item.textContent = text[lang].editProfileGenders[i]);
 
-  const autoDetectCity = document.getElementsByClassName('editcard__city-detect');
-  autoDetectCity[0].lastChild.textContent = text[lang].autoDetectCity;
-
   const profileSaveButton = document.getElementById('btnSaveEditProfile');
   profileSaveButton.textContent = text[lang].profileSaveButton;
 
@@ -272,7 +271,6 @@ const updateInnerInterface = (lang) => {
   // eslint-disable-next-line no-param-reassign,no-return-assign
   panelButtons.forEach((item, i) => item.textContent = text[lang].panelButtons[i]);
 };
-
 
 export default () => {
   let curLang = localStorage.getItem('curLang');
