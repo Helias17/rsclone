@@ -12,8 +12,9 @@ export default () => {
     const data = prepareData(registerForm);
 
     addUser(data)
-      .then(() => login(data))
-      .then(() => addPreloaderHtml())
+      .then(() => alert('Check your email to confirm registration'))
+    // .then(() => login(data))
+    // .then(() => addPreloaderHtml())
       .then(() => addLikesFromAllUsers())
       .catch((err) => {
         console.log((err));
@@ -29,11 +30,13 @@ export default () => {
   // stop our form submission from refreshing the page
     event.preventDefault();
     const data = prepareData(loginForm);
-    console.log(data);
     const loginUser = await login(data);
     if (loginUser.id) {
       console.log('login', loginUser);
       addPreloaderHtml();
+    } else if (loginUser.error) {
+      loginErrorMessage.innerHTML = 'Your account is not activated';
+      console.log('Account is not activated');
     } else {
       loginErrorMessage.innerHTML = 'Incorrect email or password.';
       console.log('login wrong');
