@@ -55,7 +55,7 @@ const updateInnerInterface = (lang) => {
         'Когда местные профили закончатся, вы сможете перейти в Глобальный режим для знакомств с людьми со всего мира.',
         'Пока эта функция отключена, вас не будут видеть другие пользователи. Но вы всё равно сможете смотреть свои пары и общаться с ними.',
         'Адрес эл. почты не подтвержден',
-        'Вы будете видеть в Находках только женщин.',
+        'Выберите кого вы хотите видеть в Находках.',
         'Гибкие настройки позволят вам контролировать входящую корреспонденцию по своему усмотрению. Вы также всегда можете отписаться по специальной ссылке внизу каждого письма.',
       ],
       feedbackSelectValues: [
@@ -146,8 +146,8 @@ const updateInnerInterface = (lang) => {
       settingsDescriptions: [
         'Калі мясцовыя профілі скончацца, вы зможаце перайсці ў Глабальны рэжым для знаёмстваў з людзьмі з усяго свету.',
         'Пакуль гэтая функцыя адключаная, вас не будуць бачыць іншыя карыстальнікі. Але вы ўсё роўна зможаце глядзець свае пары і мець зносіны з імі.',
-        'Адрас эл. пошты не пацверджаны ',
-        'Вы будзеце бачыць у знаходцы толькі жанчын.',
+        'Адрас эл. пошты не пацверджаны',
+        'Выберыце каго вы хочаце бачыць у Знаходка.',
         'Гнуткія налады дазволяць вам кантраляваць уваходную карэспандэнцыю па сваім меркаванні. Вы таксама заўсёды можаце адпісацца па спецыяльнай спасылцы ўнізе кожнага ліста.',
       ],
       feedbackSelectValues: [
@@ -242,7 +242,7 @@ const updateInnerInterface = (lang) => {
         'Going global will allow you to see people from around the world after you’ve run out of profiles nearby.',
         'While turned off, you will not be shown in the card stack. You can still see and chat with your matches.',
         'Email unverified (check your inbox)',
-        'You will only see women in the discovery.',
+        'Choose who you want to see in the discovery.',
         'Control the emails you want to get — all of them, just the important stuff, or the bare minimum. You can always unsubscribe from the bottom of any email.',
       ],
       feedbackSelectValues: [
