@@ -340,15 +340,15 @@
       </form>
       <div class="settings settings_nested" data-name="feedback">
         <p class="settings__title">Feedback</p>
-        <form class="feedback">
-          <select name="" class="feedback__select">
-            <option value="" disabled selected>Topic</option>
-            <option value="">Proposal</option>
-            <option value="">Claim</option>
-            <option value="">Question</option>
+        <form class="feedback" id="feedback-form">
+          <select name="questionType" class="feedback__select">
+            <option value="topic" disabled selected>Topic</option>
+            <option value="proposal">Proposal</option>
+            <option value="claim">Claim</option>
+            <option value="question">Question</option>
           </select>
-          <textarea name="" cols="30" rows="10" placeholder="Your message" class="feedback__textarea"></textarea>
-          <button class="btn btn_center">Send</button>
+          <textarea name="message" cols="30" rows="10" placeholder="Your message" class="feedback__textarea"></textarea>
+          <input type="submit" class="btn btn_center"></input>
         </form>
       </div>
     </div>
