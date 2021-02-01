@@ -313,9 +313,9 @@ const getMainPage = () => `
                                 </button>
                             </li>
                             <li class="languages__item">
-                                <button class="languages__button" id="esLang" aria-label="испанский" aria-selected="false" lang="es">
-                                    <span class="languages__desc-en">Español</span>
-                                    <span class="languages__desc-ru">испанский</span>
+                                <button class="languages__button" id="byLang" aria-label="Belarussian" aria-selected="false" lang="by">
+                                    <span class="languages__desc-en">Belarusian</span>
+                                    <span class="languages__desc-ru">Belarusian</span>
                                 </button>
                             </li>
                         </ul>
