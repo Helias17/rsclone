@@ -117,3 +117,19 @@ export const getPassions = async () => {
   });
   return response.json();
 };
+
+export const sendMailToAdmin = async (data) => {
+  const currentUser = getAuthorizedUser();
+  const mailData = {
+    ...data,
+    id: currentUser.id,
+    email: currentUser.email,
+    name: currentUser.name,
+  };
+  const response = await fetch(`${BASE_URL}/mail`, {
+    method: 'POST',
+    body: JSON.stringify(mailData),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  return response.json();
+};
