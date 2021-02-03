@@ -10,18 +10,16 @@ export default () => {
   // stop our form submission from refreshing the page
     event.preventDefault();
     const data = prepareData(registerForm);
-
-    addUser(data)
-      // eslint-disable-next-line no-alert
-      .then(() => alert('Check your email to confirm registration'))
-    // .then(() => login(data))
-    // .then(() => addPreloaderHtml())
-      .then(() => addLikesFromAllUsers())
-      .catch((err) => {
-        console.log((err));
-        console.log('The email address is already taken.');
-        registrationErrorMessage.innerHTML = 'The email address is already taken.';
-      });
+    try {
+      const userData = await addUser(data);
+      await addLikesFromAllUsers(userData);
+      alert('Check your email to confirm registration.');
+      await addPreloaderHtml();
+    } catch (e) {
+      console.log((e));
+      console.log('The email address is already taken.');
+      registrationErrorMessage.innerHTML = 'The email address is already taken.';
+    }
   };
 
   const loginForm = document.querySelector('#login-form');
