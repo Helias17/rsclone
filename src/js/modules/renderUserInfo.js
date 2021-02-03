@@ -1,13 +1,33 @@
-import userBlankPhoto from '../../images/icon-anonymos-user.png';
 import sliders from './sliders';
 
 export default () => {
+  const userBlankPhoto = 'https://rstinder.com/assets/icon-anonymos-user.png';
   const user = JSON.parse(localStorage.getItem('clone-tinder-user'));
-  const userPhotosArr = user.photos ? user.photos.split(',') : [userBlankPhoto];
+  let userPhotosArr = user.photos ? user.photos.split(',') : [userBlankPhoto];
+
+  // filter photos array from wrong data
+  userPhotosArr = userPhotosArr.filter((item) => item.startsWith('http'));
+
   const userAvatar = document.querySelector('.profile-header__user-icon');
   userAvatar.style.backgroundImage = userPhotosArr.length > 0 ? `url(${userPhotosArr[0]})` : 'url(\'assets/icon-tinder-orange.svg\')';
 
   sliders.userCard.init(userPhotosArr);
+
+  const inputPhotos = document.querySelector('#userPhotos');
+  inputPhotos.value = userPhotosArr.join(','); // save list of photos to hidden input
+
+  const editPhotosItems = document.querySelectorAll('.editcard__gallery-item');
+  editPhotosItems.forEach((item, index) => {
+    const photoItem = item;
+
+    if (userPhotosArr[index]) {
+      photoItem.classList.remove('editcard__gallery-item_blank');
+      photoItem.style.backgroundImage = `url(${userPhotosArr[index]})`;
+    } else {
+      photoItem.style.backgroundImage = 'none';
+      photoItem.classList.add('editcard__gallery-item_blank');
+    }
+  });
 
   const userEmail = document.getElementById('userEmailSettings');
   userEmail.textContent = user.email;
