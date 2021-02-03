@@ -12,9 +12,11 @@ export default () => {
     const data = prepareData(registerForm);
     try {
       const userData = await addUser(data);
-      await addLikesFromAllUsers(userData);
-      alert('Check your email to confirm registration.');
-      await addPreloaderHtml();
+      if (userData.id) {
+        await addLikesFromAllUsers(userData);
+        alert('Check your email to confirm registration.');
+        await addPreloaderHtml();
+      }
     } catch (e) {
       console.log((e));
       console.log('The email address is already taken.');
