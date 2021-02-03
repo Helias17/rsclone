@@ -22,7 +22,6 @@ export const login = async (data) => {
     headers: { 'Content-Type': 'application/json' },
   });
   const [user = {}] = await response.json() || [];
-  console.log('user', user);
   if (user.error) {
     return { error: user.error };
   }
@@ -88,15 +87,13 @@ const getAllUsers = async () => {
   return users;
 };
 
-export const addLikesFromAllUsers = async () => {
-  const currentUser = getAuthorizedUser();
-  const allUsers = await getAllUsers();
-  allUsers.forEach((user) => {
-    if (user.gender_id !== currentUser.gender_id) {
-      const data = { sender: user.id, recipient: currentUser.id, like: 'like' };
-      addLike(data);
-    }
+export const addLikesFromAllUsers = async (userData) => {
+  const response = await fetch(`${BASE_URL}/users/autolikes`, {
+    method: 'POST',
+    body: JSON.stringify(userData),
+    headers: { 'Content-Type': 'application/json' },
   });
+  return response.json();
 };
 
 export const getWorksheets = async (id) => {
