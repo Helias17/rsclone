@@ -259,7 +259,7 @@ const getMainPage = () => `
                             <div class="measure">
                                 <span class="modal__error-registration"></span>
                                 <label for="email" class="email__label"></label>
-                                <input name="email" class="email__input" type="email" maxlength="20" placeholder="Email" required>
+                                <input name="email" class="email__input" type="email" placeholder="Email" required>
                                 <label for="password" class="password__label"></label>
                                 <input name="password" class="password__input" type="password" maxlength="30" placeholder="Password" required>
                                 <input name="name" class="name__input" type="text" maxlength="40" placeholder="Name" required>

@@ -12,6 +12,7 @@ export default () => {
     const data = prepareData(registerForm);
 
     addUser(data)
+      // eslint-disable-next-line no-alert
       .then(() => alert('Check your email to confirm registration'))
     // .then(() => login(data))
     // .then(() => addPreloaderHtml())

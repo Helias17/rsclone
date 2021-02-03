@@ -454,20 +454,23 @@
           <button class="btn btn_hidden" id="btnCancelEditProfile">cancel</button>
         </div>
         <div class="editcard">
-          <form action="" id="formEditUserCard">
-            <div class="editcard__gallery">
-              <div class="editcard__gallery-item"
-                style="background-image: url('https://rustartup.com/tinder/images/users/user1-1.jpg');">
-              </div>
-              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
-              <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+          <input type="file" accept="image/x-png,image/gif,image/jpeg" name="picture[]" id="photo1"
+            class="js-photo-file" />
+          <div class="editcard__gallery">
+            <div class="editcard__gallery-item"
+              style="background-image: url('https://rustartup.com/tinder/images/users/user1-1.jpg');">
             </div>
+            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+            <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
+          </div>
+          <form action="" id="formEditUserCard">
+            <input type="hidden" name="photos">
             <div class="editcard__title">
               <span class="editcard__title-text">About</span>
             </div>
