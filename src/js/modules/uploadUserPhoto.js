@@ -1,4 +1,3 @@
-import { data } from 'dom7';
 import saveUserInfo from './saveUserInfo';
 import renderUserInfo from './renderUserInfo';
 
@@ -18,7 +17,7 @@ export default (e) => {
 
   formData.append('picture[]', e.target.files[0]);
 
-  fetch('http://files.vhost154177.cpsite.ru', {
+  fetch('https://rstinder.com/upload.php', {
     method: 'POST',
     body: formData,
   }).then((response) => response.json())

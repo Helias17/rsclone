@@ -1,5 +1,6 @@
 import { addLike } from './users';
 import renderUserLikeCard from './renderUserLikeCard';
+import renderMatches from './renderMatches';
 
 export default async () => {
   const buttons = document.querySelector('.usercard__buttons');
@@ -15,7 +16,10 @@ export default async () => {
         recipient: parseInt(mainUserCard.dataset.userId, 10),
         sender: parseInt(user.id, 10),
       };
-      addLike(data).then(() => { renderUserLikeCard(); });
+      addLike(data).then(() => {
+        renderUserLikeCard();
+        renderMatches();
+      });
       buttons.dataset.click = '1';
     }
   });
