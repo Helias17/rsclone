@@ -28,11 +28,13 @@ import initLikeDislike from './initLikeDislike';
 import renderMatches from './renderMatches';
 import initDeleteAccount from './deleteAccount';
 import initFeedback from './feedback';
+import initInputPhotoFile from './initInputPhotoFile';
 
 export default () => {
   initSettingsSliders();
   initSettingsChangeWatch();
   initEditUserCard();
+  initInputPhotoFile();
   initPassionsEditWatch();
   updatePassionsList();
   initToggleProfileSettings();
