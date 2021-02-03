@@ -117,7 +117,7 @@
           <ul class="settings__list">
             <li class="settings__item settings__item_no-pointer">
               <p class="settings__item-name">Location</p>
-              <p class="settings__item-value">undefined</p>
+              <p class="settings__item-value" id="userCity">undefined</p>
             </li>
             <li class="settings__item settings__item_no-pointer settings__item_flex-wrap">
               <p class="settings__item-name">Maximum distance</p>
@@ -454,8 +454,10 @@
           <button class="btn btn_hidden" id="btnCancelEditProfile">cancel</button>
         </div>
         <div class="editcard">
-          <input type="file" accept="image/x-png,image/gif,image/jpeg" name="picture[]" id="photo1"
-            class="js-photo-file" />
+          <input type="file" accept="image/x-png,image/gif,image/jpeg" name="picture[]" id="userPhotoFileInput" />
+          <form action="" id="formEditUserPhotos">
+            <input type="hidden" name="photos" id="userPhotos">
+          </form>
           <div class="editcard__gallery">
             <div class="editcard__gallery-item"
               style="background-image: url('https://rustartup.com/tinder/images/users/user1-1.jpg');">
@@ -470,7 +472,6 @@
             <div class="editcard__gallery-item editcard__gallery-item_blank"></div>
           </div>
           <form action="" id="formEditUserCard">
-            <input type="hidden" name="photos">
             <div class="editcard__title">
               <span class="editcard__title-text">About</span>
             </div>

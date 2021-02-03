@@ -11,12 +11,12 @@ export default (e) => {
   }).then((response) => response.json())
     .then((data) => {
       console.log(data);
-      const formEditUserCard = document.querySelector('#formEditUserCard');
-      const inputPhotos = formEditUserCard.querySelector('input[name="photos"]');
+      const formEditUserPhotos = document.querySelector('#formEditUserPhotos');
+      const inputPhotos = document.querySelector('#userPhotos');
       const photosArr = inputPhotos.value ? inputPhotos.value.split(',') : [];
       photosArr.push(data.file);
       inputPhotos.value = photosArr.join(',');
-      saveUserInfo(formEditUserCard);
+      saveUserInfo(formEditUserPhotos).then(() => console.log('User info updated after photo upload!'));
       return data;
     });
 };

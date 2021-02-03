@@ -9,6 +9,21 @@ export default () => {
 
   sliders.userCard.init(userPhotosArr);
 
+  const inputPhotos = document.querySelector('#userPhotos');
+  inputPhotos.value = user.photos; // save list of photos to hidden input
+
+  const editPhotosItems = document.querySelectorAll('.editcard__gallery-item');
+  editPhotosItems.forEach((item, index) => {
+    const photoItem = item;
+
+    if (userPhotosArr[index]) {
+      photoItem.classList.remove('editcard__gallery-item_blank');
+      photoItem.style.backgroundImage = `url(${userPhotosArr[index]})`;
+    } else {
+      photoItem.style.backgroundImage = 'none';
+    }
+  });
+
   const userEmail = document.getElementById('userEmailSettings');
   userEmail.textContent = user.email;
 

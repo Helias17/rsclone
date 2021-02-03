@@ -29,11 +29,13 @@ import renderMatches from './renderMatches';
 import initDeleteAccount from './deleteAccount';
 import initFeedback from './feedback';
 import initInputPhotoFile from './initInputPhotoFile';
+import initEditPhotos from './initEditPhotos';
 
 export default () => {
   initSettingsSliders();
   initSettingsChangeWatch();
   initEditUserCard();
+  initEditPhotos();
   initInputPhotoFile();
   initPassionsEditWatch();
   updatePassionsList();

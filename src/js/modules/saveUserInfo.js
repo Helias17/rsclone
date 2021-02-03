@@ -13,7 +13,10 @@ export default async (form) => {
     if (upUser.id) {
       console.log('user updated', upUser);
       renderUserLikeCard();
+      return upUser;
     }
     console.log('user not updated :-(');
   }
+
+  return false;
 };
