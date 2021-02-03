@@ -8,14 +8,15 @@ export default async (form) => {
 
   if (currentUser && currentUser.email) {
     const data = prepareData(form);
-    console.log(`data for sending: ${JSON.stringify(data)}`);
+    // eslint-disable-next-line no-console
+    console.log(`data for saving: ${JSON.stringify(data)}`);
     const upUser = await updateUser(data, currentUser.id);
     if (upUser.id) {
+      // eslint-disable-next-line no-console
       console.log('user updated', upUser);
       renderUserLikeCard();
       return upUser;
     }
-    console.log('user not updated :-(');
   }
 
   return false;

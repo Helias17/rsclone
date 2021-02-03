@@ -12,6 +12,5 @@ export default async function getCityName(lat, lng) {
   const json = await request.json();
   const city = json.address.town || json.address.city;
 
-  console.log(`You are here: ${city}`);
   return city;
 }
