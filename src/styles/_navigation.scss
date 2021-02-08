@@ -1,0 +1,47 @@
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 0.5rem;
+  border-bottom-width: 0.1rem;
+  border-bottom-color: #e8e8e8;
+  border-style: solid;
+
+  &__block {
+    width: 25%;
+
+    @media (max-width: $screen-tablet) {
+      margin-bottom: 12px;
+      flex-basis: 50%;
+    }
+  }
+
+  h2 {
+    margin-bottom: 0.25rem;
+    font-size: 2rem;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 800;
+
+    @media (max-width: $screen-tablet) {
+      font-size: 1.8rem;
+    }
+  }
+
+  li {
+    line-height: 3.2rem;
+    font-size: 1.6rem;
+
+    @media (max-width: $screen-tablet) {
+      font-size: 1.4rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: #2c2c2c;
+
+      &:hover {
+        color: #fd5068;
+      }
+    }
+  }
+}

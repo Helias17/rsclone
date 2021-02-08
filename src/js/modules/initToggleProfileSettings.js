@@ -1,0 +1,30 @@
+import settingsProfile from './settingsProfile.js';
+import hideSettingsNestedMenu from './hideSettingsNestedMenu.js';
+import renderPassionsUserCard from './renderPassionsUserCard';
+
+export default () => {
+  const profileHeader = document.querySelector('.profile-header');
+  const profileLinkBack = document.querySelector('.profile-header__arrow');
+  const profileSettings = document.querySelector('.inner__col1-profile');
+  const profileUsercard = document.querySelector('.inner__profile-usercard');
+  const mainUserCard = document.getElementById('mainUserCard');
+
+  profileHeader.addEventListener('click', (e) => {
+    // show/hide arrow in profile header on desktop
+    if (e.target.closest('.profile-header__wrap, .profile-header__arrow')) {
+      if (!settingsProfile.nestedMenuOpened) {
+        profileLinkBack.classList.toggle('profile-header__arrow_visible');
+        profileSettings.classList.toggle('inner__col1-profile_active');
+        profileUsercard.classList.toggle('inner__profile-usercard_visible');
+        renderPassionsUserCard();
+        if (profileUsercard.classList.contains('inner__profile-usercard_visible')) {
+          mainUserCard.dataset.state = 'inactive';
+        } else {
+          mainUserCard.dataset.state = 'active'; // state for keyboard buttons support
+        }
+      } else {
+        hideSettingsNestedMenu();
+      }
+    }
+  });
+};

@@ -1,0 +1,150 @@
+.first-screen {
+  height: 100vh;
+}
+
+.main {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: $screen-tablet) {
+    justify-content: flex-end;
+  }
+}
+
+.background {
+  position: absolute;
+  background-image: url('https://rstinder.com/assets/tinder-main.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+  @media (max-width: $screen-tablet) {
+    background-image: url('https://rstinder.com/assets/tinder-main-tablet.png');
+    background-attachment: inherit;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  pointer-events: none;
+  z-index: -1;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #000 0, rgba(0, 0, 0, 0) 15rem) fixed;
+  }
+
+  @media (max-width: $screen-tablet) {
+    &::before {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to bottom, #000 0, rgba(0, 0, 0, 0) 15rem);
+    }
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to top, #000 0, rgba(0, 0, 0, 0) 64rem);
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    color: #fff;
+    font-size: 12vw;
+    font-weight: 800;
+
+    @media (max-width: $screen-tablet) {
+      font-style: italic;
+    }
+  }
+
+  &__button-register {
+    width: 26rem;
+    min-height: 5.5rem;
+    background: linear-gradient(262deg, #ff7854, #fd267d);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: .08rem;
+    border-radius: 10rem;
+    border-style: none;
+    box-shadow: 0 0.1rem 0.6rem 0 rgba(0,0,0,.27);
+    text-transform: uppercase;
+    transition-duration: .2s;
+
+    &:hover {
+      background: linear-gradient(262deg, #fd5068, #fd5068);
+    }
+
+    @media (max-width: $screen-tablet) {
+      width: 80%;
+      min-height: 5.4rem;
+      margin-top: 35vh;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      background: #fff;
+      color: #2c2c2c;
+      font-size: 1.6rem;
+      letter-spacing: 0.14rem;
+      white-space: nowrap;
+
+      &:hover {
+        background: #fff;
+      }
+    }
+  }
+
+  &__button-login {
+    display: none;
+
+    @media (max-width: $screen-tablet) {
+      width: 80%;
+      min-height: 5.4rem;
+      margin: 2rem 0;
+      display: block;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      font-size: 1.6rem;
+      letter-spacing: 0.14rem;
+      white-space: nowrap;
+      cursor: pointer;
+      color: #fff;
+      background: transparent;
+      border-radius: 100px;
+      border-width: 2px;
+      border-color: #fff;
+      border-style: solid;
+    }
+  }
+}

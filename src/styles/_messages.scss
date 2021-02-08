@@ -1,0 +1,84 @@
+.messages {
+
+  &_hidden {
+    display: none;
+  }
+
+  &__list {
+
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px 0 10px 15px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background-color: #fd5068;
+      transition: 0.3s;
+      opacity: 0;
+    }
+
+
+    &:hover, &_active {
+      box-shadow: 0 0 15px 0 hsla(0,0%,50.6%,.22);
+      background-color: #fff;
+
+      &:after {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  &__item-icon-box {
+    width: 90px;
+  }
+
+  &__item-icon {
+    display: block;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__item-text-box {
+    width: calc(100% - 90px);
+    padding-right: 10px;
+  }
+
+  &__item-username {
+    color: #333;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  &__item-text {
+    color: #333;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+
+    &:before {
+      content: '←';
+    }
+  }
+
+}
